@@ -1,4 +1,5 @@
-
+/* Esto es por si quiero agregar fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -157,4 +158,5 @@ header input {
   .piano-keys .white {
     width: 50px;
   }
+  
 }
