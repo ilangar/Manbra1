@@ -1,28 +1,38 @@
 const audioPlayer = document.getElementById("audio-player");
-const options = document.querySelectorAll(".option");
+const playButton = document.getElementById("play-button");
+const optionsSelect = document.getElementById("options-select");
+const checkButton = document.getElementById("check-button");
 
 const instruments = [
-  "instrument1.mp3",
-  "instrument2.mp3",
-  "instrument3.mp3",
-  "instrument4.mp3"
+ "../instrumentos/guitarra.mp3",
+  "../instrumentos/bajo.wav",
+  "../instrumentos/guitarra acustica.wav",
+  "../instrumentos/bombo.wav"
 ];
 
 let correctInstrumentIndex = Math.floor(Math.random() * instruments.length);
 
-// Play the sound of the correct instrument
-audioPlayer.src = instruments[correctInstrumentIndex];
-audioPlayer.play();
+<select id="options-select">
+<option value="0">../instrumentos/guitarra.webp</option>
+<option value="1">../instrumentos/bajo.png</option>
+<option value="2">../instrumentos/guitarra acustica.webp</option>
+<option value="3">../instrumentos/bateria.webp</option>
+</select>
 
-// Set up click event listeners for each option
-options.forEach((option, index) => {
-  option.addEventListener("click", () => checkAnswer(index));
-});
+playButton.addEventListener("click", playSound);
+checkButton.addEventListener("click", checkAnswer);
 
-function checkAnswer(selectedIndex) {
-  if (selectedIndex === correctInstrumentIndex) {
+function playSound() {
+  audioPlayer.src = instruments[correctInstrumentIndex];
+  audioPlayer.play();
+}
+
+function checkAnswer() {
+  const selectedOption = parseInt(optionsSelect.value);
+
+  if (selectedOption === correctInstrumentIndex) {
     alert("Correct! You guessed the right instrument.");
   } else {
-    alert("Oops! Try again.");
+    alert("Oops! Vuelve a intentar.");
   }
 }
