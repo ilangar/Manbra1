@@ -1,31 +1,39 @@
 const audioPlayer = document.getElementById("audio-player");
 const playButton = document.getElementById("play-button");
-const optionsSelect = document.getElementById("options-select");
-const checkButton = document.getElementById("check-button");
+const resetButton = document.getElementById("reset-button");
+const options = document.getElementsByClassName("option");
 
 const instruments = [
-  "../instrumentos/guitarra.mp3",
-  "../instrumentos/bajo.wav",
-  "../instrumentos/guitarra acustica.wav",
-  "../instrumentos/bombo.wav"
+  "../instrumentos/guitarra acustica.webp",
+  "../instrumentos/guitarra.webp",
+  "../instrumentos/bateria.webp",
+  "../instrumentos/bajo.png"
 ];
 
 let correctInstrumentIndex = Math.floor(Math.random() * instruments.length);
 
 playButton.addEventListener("click", playSound);
-checkButton.addEventListener("click", checkAnswer);
+resetButton.addEventListener("click", resetGame);
+
+for (let i = 0; i < options.length; i++) {
+  options[i].addEventListener("click", function () {
+    checkAnswer(i);
+  });
+}
 
 function playSound() {
   audioPlayer.src = instruments[correctInstrumentIndex];
   audioPlayer.play();
 }
 
-function checkAnswer() {
-  const selectedOption = parseInt(optionsSelect.value);
-
-  if (selectedOption === correctInstrumentIndex) {
-    alert("Correct! You guessed the right instrument.");
+function checkAnswer(selectedIndex) {
+  if (selectedIndex === correctInstrumentIndex) {
+    alert("¡Correcto! Adivinaste el instrumento correcto.");
   } else {
-    alert("Oops! Please try again.");
+    alert("¡Oops! Intenta de nuevo.");
   }
+}
+
+function resetGame() {
+  correctInstrumentIndex = Math.floor(Math.random() * instruments.length);
 }

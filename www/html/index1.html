@@ -1,59 +1,24 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess the Instrument</title>
-    <link rel="stylesheet" href="../css/style1.css">
-  </head>
-  <body>
-    <div class="game-container">
-      <h1>Adivina el instrumento!</h1>
-      <button id="play-button">Iniciar sonido</button>
-      <button id="reset-button">Reset</button>
-      <audio id="audio-player"></audio>
-      <div class="options">
-        <img src="../instrumentos/guitarra acustica.webp" class="option">
-        <img src="../instrumentos/guitarra.webp" class="option">
-        <img src="../instrumentos/bateria.webp"  class="option">
-        <img src="../instrumentos/bajo.png" class="option">
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adivina el Instrumento</title>
+  <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Adivina el instrumento!</h1>
+    <button id="play-button">Iniciar sonido</button>
+    <button id="reset-button">Reiniciar</button>
+    <audio id="audio-player"></audio>
+    <div class="options">
+      <img src="../instrumentos/guitarra acustica.webp" class="option" data-index="0">
+      <img src="../instrumentos/guitarra.webp" class="option" data-index="1">
+      <img src="../instrumentos/bateria.webp" class="option" data-index="2">
+      <img src="../instrumentos/bajo.png" class="option" data-index="3">
     </div>
-    <script src="../js/script1.js"></script>
-    <script>
-      const resetButton = document.getElementById("reset-button");
-      const audioPlayer = document.getElementById("audio-player");
-      const playButton = document.getElementById("play-button");
-      const options = document.getElementsByClassName("option");
-
-      let correctInstrumentIndex = Math.floor(Math.random() * options.length);
-
-      playButton.addEventListener("click", playSound);
-      resetButton.addEventListener("click", resetGame);
-
-      for (let i = 0; i < options.length; i++) {
-        options[i].addEventListener("click", function() {
-          checkAnswer(i);
-        });
-      }
-
-      function playSound() {
-        audioPlayer.src = options[correctInstrumentIndex].src;
-        audioPlayer.play();
-      }
-
-      function checkAnswer(selectedIndex) {
-        if (selectedIndex === correctInstrumentIndex) {
-          alert("¡Correcto! Adivinaste el instrumento correcto.");
-        } else {
-          alert("¡Oops! Intenta de nuevo.");
-        }
-      }
-
-      function resetGame() {
-        // Reload the page to restart the game
-        location.reload();
-      }
-    </script>
-  </body>
-  </html>
+  </div>
+  <script src="../js/script1.js"></script>
+</body>
+</html>
