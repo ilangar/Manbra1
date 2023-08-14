@@ -4,10 +4,10 @@ const resetButton = document.getElementById("reset-button");
 const options = document.getElementsByClassName("option");
 
 const instruments = [
-  "../instrumentos/guitarra acustica.webp",
-  "../instrumentos/guitarra.webp",
-  "../instrumentos/bateria.webp",
-  "../instrumentos/bajo.png"
+  "../instrumentos/guitarra acustica.wav",
+  "../instrumentos/guitarra.mp3",
+  "../instrumentos/bombo.wav",
+  "../instrumentos/bajo.wav"
 ];
 
 let correctInstrumentIndex = Math.floor(Math.random() * instruments.length);
@@ -35,5 +35,16 @@ function checkAnswer(selectedIndex) {
 }
 
 function resetGame() {
-  correctInstrumentIndex = Math.floor(Math.random() * instruments.length);
+  correctInstrumentIndex = -1; // Restablecemos el índice correcto
+}
+
+// Configuración de los índices correctos según la ruta de la pista de audio
+if (audioPlayer.src === instruments[0]) {
+  correctInstrumentIndex = 0;
+} else if (audioPlayer.src === instruments[1]) {
+  correctInstrumentIndex = 1;
+} else if (audioPlayer.src === instruments[2]) {
+  correctInstrumentIndex = 2;
+} else if (audioPlayer.src === instruments[3]) {
+  correctInstrumentIndex = 3;
 }
