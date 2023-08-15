@@ -1,18 +1,15 @@
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Conexión a la base de datos
-    $servername = "aws.connect.psdb.cloud";
-    $username = "07xwqnuijphsbqoab0k4";
-    $password = "pscale_pw_JXzLN6enLWTCNrN0STxPlOH5qfDa46QdrDv7xaFcFum";
-    $dbname = "manbra";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
+    $mysqli = mysqli_init();
+    $mysqli->ssl_set(NULL, NULL, "/etc/ssl/certs/ca-certificates.crt", NULL, NULL);
+    $mysqli->real_connect($_ENV["aws.connect.psdb.cloud"], $_ENV["d7r7ihtxp2q5di8xlmop"], $_ENV["pscale_pw_CjAGcVTOqgxwpDN5mIs5Cf2yhXoaqUzAcQG0HA5HF3s"], $_ENV["manbra"]);
+    
+    if ($mysqli->connect_error) 
+    {
+        die("Connection failed: " . $mysqli->connect_error);   
     }
-
+    
     // Obtener los datos del formulario
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -20,14 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST['contrasena'];
 
     // Insertar los datos en la base de datos
-    $sql = "INSERT INTO Usuarios (nombre, apellido, usuario, contraseña) VALUES ('$nombre', '$apellido', '$usuario', '$contrasena')";
+    $sql = "INSERT INTO Usuarios (nombre, apellido, usuario, contrasena) VALUES ('$nombre', '$apellido', '$usuario', '$contrasena')";
+    
+    echo $sql;
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Registro exitoso";
-    } else {
-        echo "Error al registrar: " . $conn->error;
-    }
-
-    $conn->close();
-}
+    $mysqli->close();
 ?>
