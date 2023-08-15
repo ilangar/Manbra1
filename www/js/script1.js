@@ -5,9 +5,10 @@ const options = document.getElementsByClassName("option");
 
 const instruments = [
   "../instrumentos/guitarra acustica.wav",
-  "../instrumentos/guitarra.mp3",
-  "../instrumentos/bombo.wav",
-  "../instrumentos/bajo.wav"
+  "../instrumentos/guitarra.mp4",
+  "../instrumentos/bateria.mp3",
+  "../instrumentos/bajo.wav",
+  "../instrumentos/acordeon.mp3"
 ];
 
 let correctInstrumentIndex = Math.floor(Math.random() * instruments.length);
