@@ -1,14 +1,4 @@
 <?php
-    
-    //$hostname = $_ENV['DB_HOST'];
-    //$dbName = $_ENV['DB_NAME'];
-    //$username = $_ENV['DB_USERNAME'];
-    //$password = $_ENV['DB_PASSWORD'];
-    
-    //$mysqli = mysqli_init();
-    //$mysqli->ssl_set(NULL, NULL, "/etc/ssl/certs/ca-certificates.crt", NULL, NULL);
-    //$mysqli->real_connect($hostname, $username, $password, $dbName);
-
     $mysqli = mysqli_init();
     $mysqli->ssl_set(NULL, NULL, "/etc/ssl/certs/ca-certificates.crt", NULL, NULL);
     $mysqli->real_connect($_ENV["DB_HOST"], $_ENV["DB_USERNAME"], $_ENV["DB_PASSWORD"], $_ENV["DB_NAME"]);
