@@ -1,17 +1,22 @@
-
 <?php
-    $hostname = $_ENV['aws.connect.psdb.cloud'];
-    $dbName = $_ENV['manbra'];
-    $username = $_ENV['d7r7ihtxp2q5di8xlmop'];
-    $password = $_ENV['pscale_pw_CjAGcVTOqgxwpDN5mIs5Cf2yhXoaqUzAcQG0HA5HF3s'];
     
+    //$hostname = $_ENV['DB_HOST'];
+    //$dbName = $_ENV['DB_NAME'];
+    //$username = $_ENV['DB_USERNAME'];
+    //$password = $_ENV['DB_PASSWORD'];
+    
+    //$mysqli = mysqli_init();
+    //$mysqli->ssl_set(NULL, NULL, "/etc/ssl/certs/ca-certificates.crt", NULL, NULL);
+    //$mysqli->real_connect($hostname, $username, $password, $dbName);
+
     $mysqli = mysqli_init();
-    $mysqli->ssl_set(NULL, NULL, '/etc/ssl/certs/ca-certificates.crt', NULL, NULL);
-    $mysqli->real_connect($hostname, $username, $password, $dbName, $port);
-    
-    if ($mysqli->connect_error) 
+    $mysqli->ssl_set(NULL, NULL, "/etc/ssl/certs/ca-certificates.crt", NULL, NULL);
+    $mysqli->real_connect($_ENV["DB_HOST"], $_ENV["DB_USERNAME"], $_ENV["DB_PASSWORD"], $_ENV["DB_NAME"]);
+    $mysqli->close();
+  
+    if ($mysqli->connect_error)
     {
-        die("Connection failed: " . $mysqli->connect_error);   
+        die("Connection failed: " . $mysqli->connect_error);
     }
     else 
     {
