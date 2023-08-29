@@ -1,7 +1,7 @@
 const audioPlayer = document.getElementById("audio-player");
 const playButton = document.getElementById("play-button");
 const resetButton = document.getElementById("reset-button");
-const options = document.getElementsByClassName("option");
+
 
 const instruments = [
   "../instrumentos/cuerdas/guitarra acustica.wav",
@@ -23,38 +23,41 @@ const container = document.querySelector("#instrumentos");
 const img1 = document.createElement("img");
 img1.src = "../instrumentos/cuerdas/guitarra acustica.webp";
 img1.alt = "guitarra";
-img1.class="option";
 img1.width="150";
 img1.height="150";
-
+img1.setAttribute('data-index','0');
+img1.classList.add('option');
 
 const img2 = document.createElement("img");
 img2.src = "../instrumentos/cuerdas/guitarra.webp";
 img2.alt = "guitarra";
-img2.class="option";
 img2.width="150";
 img2.height="150";
+img2.setAttribute('data-index','1');
+img2.classList.add('option');
 
 const img3 = document.createElement("img");
 img3.src = "../instrumentos/cuerdas/violin.png";
 img3.alt = "violin";
-img3.class="option";
 img3.width="150";
 img3.height="150";
+img3.setAttribute('data-index','2');
+img3.classList.add('option');
 
 const img4 = document.createElement("img");
 img4.src = "../instrumentos/cuerdas/bajo.png";
 img4.alt = "bajo";
-img4.class="option";
 img4.width="150";
 img4.height="150";
-
+img4.setAttribute('data-index','3');
+img4.classList.add('option');
 
 container.appendChild(img1);
 container.appendChild(img2);
 container.appendChild(img3);
 container.appendChild(img4);
 
+const options = document.getElementsByClassName("option");
 
 /*
       <img src="../instrumentos/cuerdas/guitarra acustica.webp" class="option" data-index="0">
@@ -96,7 +99,8 @@ else if (audioPlayer.src === instruments[4]) {
 function checkAnswer(selectedIndex) {
   if (selectedIndex === correctInstrumentIndex) {
     alert("¡Correcto! Adivinaste el instrumento correcto.");
-    showNextInstruments();
+   showNextInstruments();
+
   } else {
     alert("¡Oops! Intenta de nuevo.");
   }
@@ -107,5 +111,9 @@ function resetGame() {
   audioPlayer.pause();
   audioPlayer.currentTime = 0;
 }
+
+
+
+
 
 
