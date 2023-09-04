@@ -82,19 +82,6 @@ function playSound() {
   audioPlayer.play();
 
 }
-// Configuración de los índices correctos según la ruta de la pista de audio
-if (audioPlayer.src === instruments[0]) {
-  correctInstrumentIndex = 0;
-} else if (audioPlayer.src === instruments[1]) {
-  correctInstrumentIndex = 1;
-} else if (audioPlayer.src === instruments[2]) {
-  correctInstrumentIndex = 2;
-} else if (audioPlayer.src === instruments[3]) {
-  correctInstrumentIndex = 3;
-}
-else if (audioPlayer.src === instruments[4]) {
-  correctInstrumentIndex = 4;
-}
 
 function checkAnswer(selectedIndex) {
   if (selectedIndex === correctInstrumentIndex) {
