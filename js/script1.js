@@ -100,7 +100,52 @@ function resetGame() {
 }
 
 
+const newInstruments = [
+  "../instrumentos/viento/acordeon.mp3",
+  "../instrumentos/viento/piano.mp3",
+  "../instrumentos/viento/trompeta.mp3",
+  "../instrumentos/viento/flauta.mp3",
 
+];
 
+const newImages = [
+  "../instrumentos/viento/acordeon.png",
+  "../instrumentos/viento/piano.png",
+  "../instrumentos/viento/trompeta.png",
+  "../instrumentos/viento/flauta.png",
+];
+function loadNewInstruments() {
+  instruments.length = 0; // Limpia la lista de instrumentos existente
+  images.length = 0; // Limpia la lista de imágenes existente
+
+  // Agrega los nuevos instrumentos y sus imágenes a las listas
+  instruments.push(...newInstruments);
+  images.push(...newImages);
+
+  // Reinicia el juego
+  resetGame();
+}
+function showNextInstruments() {
+  loadNewInstruments(); // Carga nuevos instrumentos y sus imágenes
+  correctInstrumentIndex = Math.floor(Math.random() * instruments.length);
+  audioPlayer.pause();
+  audioPlayer.currentTime = 0;
+
+  // Aquí puedes actualizar las imágenes en el DOM con las nuevas imágenes
+  // Por ejemplo, puedes cambiar la src y alt de las imágenes existentes.
+  for (let i = 0; i < options.length; i++) {
+    options[i].src = images[i];
+    options[i].alt = "Nuevo instrumento"; // Cambia esto según lo necesites
+  }
+}
+const newInstruments2 = [
+  "../instrumentos/percusion/bateria.mp3",
+  "../instrumentos/percusion/bombo.mp3",
+];
+
+const newImages2 = [
+  "../instrumentos/percusion/bateria.webp",
+  "../instrumentos/tercer_nivel/instrumento2.png",
+];
 
 
