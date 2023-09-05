@@ -1,7 +1,8 @@
 const audioPlayer = document.getElementById("audio-player");
 const playButton = document.getElementById("play-button");
 const resetButton = document.getElementById("reset-button");
-
+let inst='';
+let imginst='';
 
 const instruments = [
   "../instrumentos/cuerdas/guitarra acustica.wav",
@@ -100,7 +101,7 @@ function resetGame() {
 }
 
 
-const newInstruments = [
+const instruments1 = [
   "../instrumentos/viento/acordeon.mp3",
   "../instrumentos/viento/piano.mp3",
   "../instrumentos/viento/trompeta.mp3",
@@ -108,23 +109,42 @@ const newInstruments = [
 
 ];
 
-const newImages = [
+const images1 = [
   "../instrumentos/viento/acordeon.png",
   "../instrumentos/viento/piano.png",
   "../instrumentos/viento/trompeta.png",
   "../instrumentos/viento/flauta.png",
 ];
+
+
 function loadNewInstruments() {
   instruments.length = 0; // Limpia la lista de instrumentos existente
   images.length = 0; // Limpia la lista de imágenes existente
 
+  
+  if(inst=='' && imginst==''){
+    inst='instruments1';
+    imginst='images1';
+    instruments.push(...instruments1);
+    images.push(...images1);
+  }else if (inst=='instruments1' && imginst=='images1'){
+    inst='instruments2';
+    imginst='images2';
+    instruments.push(...instruments2);
+    images.push(...images2);
+  }else if (inst=='instruments2' && imginst=='images2'){
+    inst='';
+    imginst='';
+    instruments.push(...instruments);
+    images.push(...images);
+  }
   // Agrega los nuevos instrumentos y sus imágenes a las listas
-  instruments.push(...newInstruments);
-  images.push(...newImages);
-
+  
   // Reinicia el juego
   resetGame();
 }
+
+
 function showNextInstruments() {
   loadNewInstruments(); // Carga nuevos instrumentos y sus imágenes
   correctInstrumentIndex = Math.floor(Math.random() * instruments.length);
@@ -138,14 +158,20 @@ function showNextInstruments() {
     options[i].alt = "Nuevo instrumento"; // Cambia esto según lo necesites
   }
 }
-const newInstruments2 = [
+const instruments2 = [
   "../instrumentos/percusion/bateria.mp3",
-  "../instrumentos/percusion/bombo.mp3",
+  "../instrumentos/percusion/bombo.wav",
+  "../instrumentos/percusion/pandereta.mp3",
+  "../instrumentos/percusion/triangulo.mp3",
+
 ];
 
-const newImages2 = [
+const images2 = [
   "../instrumentos/percusion/bateria.webp",
-  "../instrumentos/tercer_nivel/instrumento2.png",
+  "../instrumentos/percusion/bombo.png",
+  "../instrumentos/percusion/pandereta.png",
+  "../instrumentos/percusion/triangulo.png",
+
 ];
 
 

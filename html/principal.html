@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones Interactivos</title>
+</head>
+<body>
+    <h1>Selecciona una opción:</h1>
+    <button onclick="irAPiano()">Piano Interactivo</button>
+    <button onclick="irAAdivina()">Adivina el Instrumento</button>
+    <button onclick="irASimon()">Simon</button>
+
+    <script>
+        function irAPiano() {
+            window.location.href = "piano.html"; // Cambia "piano.html" por la URL de tu página de piano.
+        }
+
+        function irAAdivina() {
+            window.location.href = "reconocer.html"; // Cambia "adivina.html" por la URL de tu página de adivina el instrumento.
+        }
+
+        function irASimon() {
+            window.location.href = "simon.html"; // Cambia "simon.html" por la URL de tu página de Simon.
+        }
+    </script>
+</body>
+</html>
