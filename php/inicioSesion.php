@@ -18,7 +18,7 @@
     if ($result->num_rows == 1) 
     {
         $result->free_result();
-        header("Location: ../html/index.html");
+        header("Location: ../html/principal.html");
         exit();
     } 
     else 
