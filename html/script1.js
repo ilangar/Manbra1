@@ -124,10 +124,8 @@ function limpiarcomponentes(){
 
   function checkAnswer(selectedIndex) {
     if (selectedIndex == correctInstrumentIndex) {
-      alert("¡Correcto! Adivinaste el instrumento correcto.")
-      /*label.textContent = "¡Correcto! Adivinaste el instrumento correcto.";
-      label.style.color = "green";
-      */
+      alert("¡Correcto! Adivinaste el instrumento correcto.");
+      
       if (grupo==1){
         limpiarcomponentes();
         Recarga("../instrumentos/viento/acordeon.png","acordeon","../instrumentos/viento/piano.png","piano","../instrumentos/viento/trompeta.png","trompeta","../instrumentos/viento/flauta.png","flauta","instruments2");   
@@ -142,45 +140,13 @@ function limpiarcomponentes(){
 
       resetGame();
     } else {
-       alert("¡Oops! Intenta de nuevo.");
-       if (grupo==1){
-        limpiarcomponentes();
-        Recarga("../instrumentos/viento/acordeon.png","acordeon","../instrumentos/viento/piano.png","piano","../instrumentos/viento/trompeta.png","trompeta","../instrumentos/viento/flauta.png","flauta","instruments2");   
-        grupo=2;  
-      }else if (grupo==2){
-        limpiarcomponentes();
-        Recarga("../instrumentos/percusion/bateria.webp","bateria","../instrumentos/percusion/bombo.png","bombo","../instrumentos/percusion/pandereta.png","pandereta","../instrumentos/percusion/triangulo.png","triangulo","instruments3");   
-        grupo=3;
-      }else if (grupo==3){
-        Carga1();
-      }
-
-      resetGame();
- 
-      }
+      alert("¡Oops! Intenta de nuevo.");
+    }
   }
 
   function resetGame() {
     audioPlayer.pause();
     audioPlayer.currentTime = 0;
   }
-/*
- function registrarpuntaje(){
-   $.ajax({
-      type:'POST',
-      url:'../php/reconocer.php',
-      datatype:'json',
-      data:'',
-      sucess:function(devolucion){
-
-      },
-      error:function(error){
-
-      },
-
-   });
- }
-
- */
 
 });
