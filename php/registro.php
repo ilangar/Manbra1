@@ -24,8 +24,11 @@ if ($mysqli->query($sql) === TRUE)
         $i = 1;
         while ($i <= 5) 
         {
-            $sqlPerfil = "INSERT INTO Perfil (intentos, intentosFallados, intentosAcertados, idActividad, idUser) VALUES (NULL, NULL, NULL, '$idActividad', '$idUser')";
+            $sqlPerfil = "INSERT INTO Perfil (intentosFallados, intentosAcertados, idActividad, idUser) VALUES (NULL, NULL, '$idActividad', '$idUser')";
             $mysqli->query($sqlPerfil);
+        
+            $sqlMusicogramas = "INSERT INTO Musicogramas (idUser, patron) VALUES ('$idUser', NULL)";
+            $mysqli->query($sqlMusicogramas)
             $i++;
         }
     }
