@@ -1,3 +1,12 @@
+.fondo3 
+    {
+        background-image: url('../diseño/FondoSimon.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        text-align: center;
+        padding-top: 50px; }
+
 body {
     display: inline-grid;
     place-items: center;
