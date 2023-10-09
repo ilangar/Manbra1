@@ -1,0 +1,106 @@
+.fondo1 
+    {
+        background-image: url('../diseño/PRINCIPAL.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        text-align: center;
+        padding-top: 50px; 
+    } 
+    .btnSimon
+{
+    background-color: transparent;
+    background-image: url('../diseño/btnSimon.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: #fff;
+    padding: 50px 100px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px; 
+    text-decoration: none;
+    font-size: 25px;
+    position: relative; 
+    top: 350px; 
+
+}
+.btnReconocer
+{
+    background-color: transparent;
+    background-image: url('../diseño/btnReconocer.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: #fff;
+    padding: 50px 100px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 25px;
+    position: relative; 
+    top: 350px; 
+}
+.btnPiano
+{
+    background-color: transparent;
+    background-image: url('../diseño/btnPiano.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: #fff;
+    padding: 50px 100px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 25px;
+    position: relative; 
+    top: 350px; 
+}
+
+.btnAjustes
+{
+   /* background-color: transparent;
+    background-image: url('../diseño/btnAjustes.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: #fff;
+    padding: 20px 40px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 25px;*/ 
+    position: absolute;
+    top: 8%;
+    left: 6%;
+    width:100px;
+    }
+    
+
+.btnPerfil
+{
+    background-color: transparent;
+    background-image: url('../diseño/btnPerfil.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: #fff;
+    padding: 20px 40px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 25px;
+    position: absolute;
+    top: 8%;
+    left: 87%;
+    }

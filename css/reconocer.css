@@ -1,38 +1,60 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f4f4f4;
+.fondo2 
+{
+    background-image: url('../diseño/FondoReconocer.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    padding-top: 50px; 
 }
-
-
-.game-container {
-  text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+.btnGuitarraelectrica
+{
+    background-color: transparent;
+    background-image: url('../diseño/guitarraelectrica.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px; 
+    text-decoration: none; 
+    font-size: 18px;
 }
-
-.options {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
+.btnViolin
+{
+    background-color: transparent;
+    background-image: url('../diseño/violin.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px; 
+    text-decoration: none; 
+    font-size: 18px;
 }
-
-.option {
-  width: 150px;
-  height: 150px;
-  margin: 10px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-
-.option:hover {
-  transform: scale(1.1);
+.btnCasa
+{
+    background-color: transparent;
+    background-image: url('../diseño/btnCasa.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: #fff;
+    padding: 20px 40px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px; 
+    text-decoration: none; 
+    font-size: 18px;
+    position: absolute;
+    top: 8%;
+    left: 90%;
 }

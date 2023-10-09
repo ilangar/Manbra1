@@ -4,25 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botones Interactivos</title>
+    <link rel="stylesheet" href="../css/principal.css">
+
 </head>
-<body>
-    <h1>Selecciona una opción:</h1>
-    <button onclick="irAPiano()">Piano Interactivo</button>
-    <button onclick="irAAdivina()">Adivina el Instrumento</button>
-    <button onclick="irASimon()">Simon</button>
+<body class="fondo1">
 
-    <script>
-        function irAPiano() {
-            window.location.href = "piano.html"; // Cambia "piano.html" por la URL de tu página de piano.
-        }
+    <a href="piano.html" class="btnPiano">Piano</a>
+    <a href="reconocer.html" class="btnReconocer">Reconocer</a>
+    <a href="simon.html" class="btnSimon">Simon</a>
 
-        function irAAdivina() {
-            window.location.href = "reconocer.html"; // Cambia "adivina.html" por la URL de tu página de adivina el instrumento.
-        }
+    <img class="btnAjustes" src="../diseño/btnAjustes.png">
+    <a href="perfil.html" class="btnPerfil"></a>
 
-        function irASimon() {
-            window.location.href = "simon.html"; // Cambia "simon.html" por la URL de tu página de Simon.
-        }
-    </script>
+
+
 </body>
 </html>
