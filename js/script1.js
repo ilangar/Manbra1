@@ -125,9 +125,8 @@ function limpiarcomponentes(){
   function checkAnswer(selectedIndex) {
     if (selectedIndex == correctInstrumentIndex) {
       alert("¡Correcto! Adivinaste el instrumento correcto.")
-      /*label.textContent = "¡Correcto! Adivinaste el instrumento correcto.";
-      label.style.color = "green";
-      */
+      
+      
       if (grupo==1){
         limpiarcomponentes();
         Recarga("../instrumentos/viento/acordeon.png","acordeon","../instrumentos/viento/piano.png","piano","../instrumentos/viento/trompeta.png","trompeta","../instrumentos/viento/flauta.png","flauta","instruments2");   
