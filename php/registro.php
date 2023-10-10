@@ -9,37 +9,52 @@ $apellido = $_POST['apellido'];
 $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
 
-$sql = "INSERT INTO Usuarios (nombre, apellido, usuario, contrasena) VALUES ('$nombre', '$apellido', '$usuario', '$contrasena')";
+$checkUsuario = "SELECT usuario FROM Usuarios WHERE usuario = '$usuario'";
+$resultCheck = $mysqli->query($checkUsuario);
 
-if ($mysqli->query($sql) === TRUE) 
+if ($resultCheck) 
 {
-    $idUser = $mysqli->insert_id;
-    
-    $sqlActividad = "SELECT idActividades FROM Actividades";
-    $result_actividad = $mysqli->query($sqlActividad);
-    
-    while ($registroActividad = $result_actividad->fetch_assoc()) 
+    if ($resultCheck->num_rows > 0) 
     {
-        $idActividad = $registroActividad["idActividades"];
-        $i = 1;
-        while ($i <= 5) 
+        $mensajeAviso = "Ya existe un usuario con ese nombre";
+        require "registro.php"; 
+    } 
+    else 
+    {
+        $sql = "INSERT INTO Usuarios (nombre, apellido, usuario, contrasena) VALUES ('$nombre', '$apellido', '$usuario', '$contrasena')";
+
+        if ($mysqli->query($sql) === TRUE) 
         {
-            $sqlPerfil = "INSERT INTO Perfil (intentosFallados, intentosAcertados, idActividad, idUser) VALUES (NULL, NULL, '$idActividad', '$idUser')";
-            $mysqli->query($sqlPerfil);
-        
-            $sqlMusicogramas = "INSERT INTO Musicogramas (idUser, patron) VALUES ('$idUser', NULL)";
-            $mysqli->query($sqlMusicogramas)
-            $i++;
+            $idUser = $mysqli->insert_id;
+
+            $sqlActividad = "SELECT idActividades FROM Actividades";
+            $result_actividad = $mysqli->query($sqlActividad);
+
+            while ($registroActividad = $result_actividad->fetch_assoc()) 
+            {
+                $idActividad = $registroActividad["idActividades"];
+                $i = 1;
+                while ($i <= 5) 
+                {
+                    $sqlPerfil = "INSERT INTO Perfil (intentosFallados, intentosAcertados, idActividad, idUser) VALUES (NULL, NULL, '$idActividad', '$idUser')";
+                    $mysqli->query($sqlPerfil);
+                    $i++;
+                }
+            }
+
+            $result_actividad->free_result();
+            header("Location: ../html/inicioSesion.html");
+            exit();
+        } 
+        else 
+        {
+            echo "Error al registrar: " . $mysqli->error;
         }
     }
-      
-    $result_actividad->free_result();
-    header("Location: ../html/inicioSesion.html");
-    exit();
 } 
 else 
 {
-    echo "Error al registrar: " . $mysqli->error;
+    echo "Error en la consulta: " . $mysqli->error;
 }
 
 $mysqli->close();
