@@ -2,24 +2,26 @@
 <head>
     <title>Registro de Usuario</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="../js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="../js/Registro.js" type="text/javascript"></script>
 </head>
 <body>
     <h2>Registro de Usuario</h2>
-    <form action="../php/registro.php" method="post">
+    <!--<form action="../php/registro.php" method="post">-->
         <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" required><br>
+        <input type="text" name="nombre" id="nombre" required><br>
         
         <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" required><br>
+        <input type="text" name="apellido" id="apellido"required><br>
         
         <label for="usuario">Usuario:</label>
-        <input type="text" name="usuario" required><br>
+        <input type="text" name="usuario" id="usuario" required><br>
         
         <label for="contrasena">Contraseña:</label>
-        <input type="password" name="contrasena" required><br>
-        
-        <input type="submit" value="Registrar">
-    </form>
+        <input type="password" name="contrasena" id="contrasena" required><br>
+        <label id="mensaje"></label><br>
+        <input type="button" id="reg" value="Registrar">
+    <!--</form>-->
     <p>¿Ya tienes una cuenta? <a href="inicioSesion.html">Inicia sesión aquí</a></p>
 </body>
 </html>

@@ -17,7 +17,7 @@ if ($resultCheck)
     if ($resultCheck->num_rows > 0) 
     {
         $mensajeAviso = "Ya existe un usuario con ese nombre";
-        require "registro.php"; 
+        echo $mensajeAviso;
     } 
     else 
     {
@@ -43,8 +43,9 @@ if ($resultCheck)
             }
 
             $result_actividad->free_result();
-            header("Location: ../html/inicioSesion.html");
-            exit();
+            //header("Location: ../html/inicioSesion.html");
+            //exit();
+            echo "registrado";
         } 
         else 
         {
