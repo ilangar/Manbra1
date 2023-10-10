@@ -148,7 +148,7 @@ function limpiarcomponentes(){
         grupo=2;  
       }else if (grupo==2){
         limpiarcomponentes();
-        Recarga("../instrumentos/percusion/bateria.webp","bateria","../instrumentos/percusion/bombo.png","bombo","../instrumentos/percusion/pandereta.png","pandereta","../instrumentos/percusion/triangulo.png","triangulo","instruments3");   
+        Recarga("../instrumentos/percusion/bateria.png","bateria","../instrumentos/percusion/bombo.png","bombo","../instrumentos/percusion/pandereta.png","pandereta","../instrumentos/percusion/triangulo.png","triangulo","instruments3");   
         grupo=3;
       }else if (grupo==3){
         Carga1();
