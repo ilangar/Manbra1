@@ -15,16 +15,20 @@
     $sql = "SELECT * FROM Usuarios WHERE usuario = '$usuario' AND contrasena = '$contrasena'";
     $result = $mysqli->query($sql);
 
-    if ($result->num_rows == 1) 
+    if ($result->num_rows == 0) 
     {
-        $result->free_result();
-        header("Location: ../html/principal.html");
-        exit();
+        $mensajeAviso = "Usuario o contraseña incorrectos";
+        echo $mensajeAviso;
     } 
     else 
     {
+        session_start();
+        $row=$result->fetch_assoc();
+        $_SESSION['IDUsuario']=$row['idUser'];
         $result->free_result();
-        echo "Usuario o contraseña incorrectos";
+        //echo $_SESSION['IDUsuario'];
+        header("Location: ../html/principal.php");
+        exit();
     }
 
     $mysqli->close();
