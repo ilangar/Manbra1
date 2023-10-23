@@ -1,0 +1,14 @@
+.fondo5 
+{
+    background-image: url('../diseño/FondoInicioSesion.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    padding-top: 50px; 
+}
+#botones{
+    position: absolute;
+    top:70%;
+    left:35%;
+}

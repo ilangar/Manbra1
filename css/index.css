@@ -7,6 +7,13 @@
     text-align: center;
     padding-top: 50px; 
 }
+
+#botones{
+    position: absolute;
+    top:70%;
+    left:35%;
+}
+
 .btnLogIn 
 {
     background-color: transparent;
@@ -22,6 +29,7 @@
     margin: 10px; /* Añadido para ajustar el espacio entre botones */
     text-decoration: none; /* Elimina el subrayado del enlace */
     font-size: 18px; /* Tamaño del texto */
+     
 }
 .btnRegistro 
 {
