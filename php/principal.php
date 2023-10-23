@@ -13,9 +13,9 @@ session_start();
 </head>
 <body class="fondo1">
 
-    <a href="piano.html" class="btnPiano">Piano</a>
-    <a href="reconocer.html" class="btnReconocer">Reconocer</a>
-    <a href="simon.html" class="btnSimon">Simon</a>
+    <a href="../html/piano.html" class="btnPiano">Piano</a>
+    <a href="reconocer.php" class="btnReconocer">Reconocer</a>
+    <a href="simon.php" class="btnSimon">Simon</a>
 
     
     <a href=""><img class="btnAjustes" src="../diseño/btnAjustes.png"></a>
