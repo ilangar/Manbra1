@@ -43,8 +43,6 @@ if ($resultCheck)
             }
 
             $result_actividad->free_result();
-            //header("Location: ../html/inicioSesion.html");
-            //exit();
             echo "registrado";
         } 
         else 

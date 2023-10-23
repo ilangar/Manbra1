@@ -1,16 +1,18 @@
 $(document).ready(function(){
 
-$("#reg").click(function(){
-    
+$("#LogIn").click(function(){
+ //   alert("usuario="+$("#usuario").val()+"&contrasena="+$("#contrasena").val()+"");
     $.ajax({
        type:"POST",
        url:"../php/inicioSesion.php",
        datatype:"text",
-       data: "&usuario="+$("#usuario").val()+"&contrasena="+$("#contrasena").val()+"",
+       data: "usuario="+$("#usuario").val()+"&contrasena="+$("#contrasena").val()+"",
        success: function(devolucion){
-            if(devolucion== $mensajeAviso){
+            if(devolucion=='Usuario o contraseña incorrectos'){
                 $("#mensaje").css("color","red");
                 $("#mensaje").html(devolucion);
+            }else{
+                window.location.href = '../php/principal.php'
             }
 
        },
@@ -18,6 +20,5 @@ $("#reg").click(function(){
        }
     });
 });
-
 
 });
