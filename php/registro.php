@@ -1,5 +1,5 @@
 <?php
-$_ENV = parse_ini_file(".env");
+$_ENV = parse_ini_file("../.env");
 $mysqli = mysqli_init();
 $mysqli->ssl_set(NULL, NULL, "../cacert.pem", NULL, NULL);
 $mysqli->real_connect($_ENV["DB_HOST"], $_ENV["DB_USERNAME"], $_ENV["DB_PASSWORD"], $_ENV["DB_NAME"]);
@@ -27,19 +27,14 @@ if ($resultCheck)
         {
             $idUser = $mysqli->insert_id;
 
-            $sqlActividad = "SELECT idActividades FROM Actividades";
+            $sqlActividad = "SELECT idActividad FROM Actividades";
             $result_actividad = $mysqli->query($sqlActividad);
 
             while ($registroActividad = $result_actividad->fetch_assoc()) 
             {
-                $idActividad = $registroActividad["idActividades"];
-                $i = 1;
-                while ($i <= 5) 
-                {
-                    $sqlPerfil = "INSERT INTO Perfil (intentosFallados, intentosAcertados, idActividad, idUser) VALUES (NULL, NULL, '$idActividad', '$idUser')";
-                    $mysqli->query($sqlPerfil);
-                    $i++;
-                }
+                $idActividad = $registroActividad["idActividad"];
+                $sqlPerfil = "INSERT INTO Perfil (idUser, idActividad, fallados, acertados) VALUES ('$idUser', '$idActividad', NULL, NULL)";
+                $mysqli->query($sqlPerfil);
             }
 
             $result_actividad->free_result();
@@ -50,7 +45,7 @@ if ($resultCheck)
             echo "Error al registrar: " . $mysqli->error;
         }
     }
-} 
+}
 else 
 {
     echo "Error en la consulta: " . $mysqli->error;

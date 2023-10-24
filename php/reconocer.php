@@ -11,33 +11,36 @@ if ($mysqli->connect_error)
 }
 
 $sql = "SELECT idUser FROM usuarios";
+$idUser = $_SESSION['idUser'];
 
-$idUser = $sql->insert_id;
-$resultadoDelJuego = 'fallado';
-
-if ($resultadoDelJuego === 'fallado') 
+if (!isset($_SESSION['idUser'])) 
 {
-  $sql = "UPDATE perfil SET intentosFallidos = intentosFallidos + 1 WHERE idUser = $idUser";
-} 
-else 
-{
-  $sql = "UPDATE perfil SET intentosAcertados = intentosAcertados + 1 WHERE idUser = $idUser";
+    header("Location: ../html/inicioSesion.html"); 
+    exit();
 }
 
-if ($mysqli->query($sql) === TRUE) 
+$intentosFallidos = isset($_POST['intentosFallidos']) ? $_POST['intentosFallidos'] : 0;
+$intentosAcertados = isset($_POST['intentosAcertados']) ? $_POST['intentosAcertados'] : 0;
+
+
+
+$idActividad = 1;
+
+if ($intentosFallidos > 0) 
 {
-  $mensaje = "Registro de intentos actualizado con éxito";
-  echo $mensajeExito;
-} 
-else 
+    $sqlFallidos = "UPDATE perfil SET intentosFallidos = intentosFallidos + $intentosFallidos WHERE idUser = $idUser AND idActividad = $idActividad";
+    $mysqli->query($sqlFallidos);
+}
+
+if ($intentosAcertados > 0) 
 {
-  $mensajeError = "Error al actualizar el registro de intentos";
-  echo $mensajeError . $mysqli->error;
+    $sqlAcertados = "UPDATE perfil SET intentosAcertados = intentosAcertados + $intentosAcertados WHERE idUser = $idUser AND idActividad = $idActividad";
+    $mysqli->query($sqlAcertados);
 }
 
 $mysqli->close();
-
 ?>
+
 <!DOCTYPE html>
 
 <head>
