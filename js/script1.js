@@ -124,8 +124,17 @@ function limpiarcomponentes(){
 
   function checkAnswer(selectedIndex) {
     if (selectedIndex == correctInstrumentIndex) {
+      $.ajax({
+        type: 'POST',
+        url: '../php/reconocer.php',
+        data: { intentosAcertados: 1 },
+        success: function(response) {
+        },
+        error: function(error) {
+            
+        }
+    });
       alert("¡Correcto! Adivinaste el instrumento correcto.")
-      
       
       if (grupo==1){
         limpiarcomponentes();
@@ -141,8 +150,15 @@ function limpiarcomponentes(){
 
       resetGame();
     } else {
-       alert("¡Oops! Intenta de nuevo.");
-       if (grupo==1){
+      $.ajax({
+          type: 'POST',
+          url: '../php/reconocer.php',
+          data: { intentosFallidos: 1 },
+          success: function(response) {},
+          error: function(error) {}
+      });
+      alert("¡Oops! Intenta de nuevo.");
+      if (grupo==1){
         limpiarcomponentes();
         Recarga("../instrumentos/viento/acordeon.png","acordeon","../instrumentos/viento/piano.png","piano","../instrumentos/viento/trompeta.png","trompeta","../instrumentos/viento/flauta.png","flauta","instruments2");   
         grupo=2;  
@@ -157,7 +173,7 @@ function limpiarcomponentes(){
       resetGame();
  
       }
-  }
+    }
 
   function resetGame() {
     audioPlayer.pause();

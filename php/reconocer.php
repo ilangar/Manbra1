@@ -10,8 +10,9 @@ if ($mysqli->connect_error)
     die("Conexión fallida: " . $mysqli->connect_error);
 }
 
-$sql = "SELECT idUser FROM usuarios";
-$idUser = $_SESSION['idUser'];
+// Obtiene el ID de usuario de la sesión
+$sql = "SELECT idUser FROM usuarios WHERE usuario";
+$IDUsuario = $_SESSION['idUser'];
 
 if (!isset($_SESSION['idUser'])) 
 {
@@ -22,19 +23,17 @@ if (!isset($_SESSION['idUser']))
 $intentosFallidos = isset($_POST['intentosFallidos']) ? $_POST['intentosFallidos'] : 0;
 $intentosAcertados = isset($_POST['intentosAcertados']) ? $_POST['intentosAcertados'] : 0;
 
-
-
 $idActividad = 1;
 
 if ($intentosFallidos > 0) 
 {
-    $sqlFallidos = "UPDATE perfil SET intentosFallidos = intentosFallidos + $intentosFallidos WHERE idUser = $idUser AND idActividad = $idActividad";
+    $sqlFallidos = "UPDATE perfil SET intentosFallidos = intentosFallidos + $intentosFallidos WHERE idUser = $IDUsuario AND idActividad = $idActividad";
     $mysqli->query($sqlFallidos);
 }
 
 if ($intentosAcertados > 0) 
 {
-    $sqlAcertados = "UPDATE perfil SET intentosAcertados = intentosAcertados + $intentosAcertados WHERE idUser = $idUser AND idActividad = $idActividad";
+    $sqlAcertados = "UPDATE perfil SET intentosAcertados = intentosAcertados + $intentosAcertados WHERE idUser = $IDUsuario AND idActividad = $idActividad";
     $mysqli->query($sqlAcertados);
 }
 

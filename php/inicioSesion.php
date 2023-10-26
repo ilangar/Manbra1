@@ -9,11 +9,6 @@ if ($mysqli->connect_error)
     die("Conexión fallida: " . $mysqli->connect_error);
 }
 
-session_start();
-$sql = "SELECT idUser FROM usuarios";
-$idUser = $_SESSION['idUser'];
-$_SESSION['idUser'] = $idUser;
-
 $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
 

@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
 $("#LogIn").click(function(){
- //   alert("usuario="+$("#usuario").val()+"&contrasena="+$("#contrasena").val()+"");
     $.ajax({
        type:"POST",
        url:"../php/inicioSesion.php",
