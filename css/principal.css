@@ -103,4 +103,33 @@
     left: 8%;
     }
 
-    
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Evita la barra de desplazamiento */
+      }
+      
+      .menu {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Inicialmente oculto fuera de la pantalla */
+        width: 50%; /* Ocupa la mitad de la pantalla */
+        height: 100%;
+        background-color: #333; /* Color de fondo del menú */
+        transition: left 0.3s; /* Animación de deslizamiento */
+        z-index: 1; /* Asegura que el menú esté sobre otros elementos */
+      }
+      
+      #menu img {
+        width: 100%; /* Asegura que la imagen ocupe todo el espacio del menú */
+        height: 100%;
+        object-fit: cover; /* Ajusta la imagen para cubrir todo el fondo */
+      }
+      
+      #mostrarMenu {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 2; /* Asegura que el botón esté sobre el menú */
+      }
+      

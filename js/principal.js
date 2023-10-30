@@ -7,4 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
+  document.getElementById("mostrarMenu").addEventListener("click", function() {
+    var menu = document.getElementById("menu");
+    if (menu.style.left === "-100%") {
+      menu.style.left = "0";
+    } else {
+      menu.style.left = "-100%";
+    }
+  });
+  
   

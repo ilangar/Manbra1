@@ -20,7 +20,23 @@ session_start();
 
 
     
-    <a href=""><img class="btnPerfil" src="../diseño/btnPerfil.png"></a>
+    <div class="menu" id="menu">
+  <img src="../diseño/registroventana.png" alt="Contenido del Menú">
+</div>
+<a href="#" id="mostrarMenu">
+  <img class="btnPerfil" src="../diseño/btnPerfil.png" alt="Botón Perfil">
+</a>
+<script>
+  window.onload = function() {
+    document.getElementById("mostrarMenu").addEventListener("click", function() {
+      var menu = document.getElementById("menu");
+      if (menu.style.left === "-100%") {
+        menu.style.left = "0";
+      } else {
+        menu.style.left = "-100%";
+      }
+    });
+  };
+</script>
 
- 
 </html>
