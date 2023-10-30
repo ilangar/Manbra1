@@ -13,20 +13,17 @@ session_start();
 </head>
 <body class="fondo1">
 
-    <a href="../html/piano.html" class="btnPiano">Piano</a>
-    <a href="reconocer.php" class="btnReconocer">Reconocer</a>
-    <a href="simon.php" class="btnSimon">Simon</a>
+    <a href="../html/piano.html" class="btnPiano"></a>
+    <a href="reconocer.php" class="btnReconocer"></a>
+    <a href="simon.php" class="btnSimon"></a>
+    <a href="musicograma.php" class="btnMusicograma"></a>
+
 
     
     <a href=""><img class="btnAjustes" src="../diseño/btnAjustes.png"></a>
     <a href=""><img class="btnPerfil" src="../diseño/btnPerfil.png"></a>
 
-    <script>
-        function abrirVentanaEmergente() {
-            // Abre una ventana emergente
-            window.open('../diseño/menuAjustes.png', '../diseño/menuAjustes.png', 'width=400,height=400');
-        }
-    </script>
+    
 </head>
 <body>
     <a href="#" onclick="abrirVentanaEmergente();"><img class="btnAjustes" src="../diseño/btnAjustes.png"></a>
