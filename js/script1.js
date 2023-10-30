@@ -123,12 +123,17 @@ function limpiarcomponentes(){
   }
 
   function checkAnswer(selectedIndex) {
+    //alert (selectedIndex);
     if (selectedIndex == correctInstrumentIndex) {
       $.ajax({
         type: 'POST',
-        url: '../php/reconocer.php',
-        data: { intentosAcertados: 1 },
+        url: '../php/scoring.php',
+        data: { intentosAcertados:1 },
+        dataType:'json',
         success: function(response) {
+         // alert (response.result['acertados']);
+          $("#contador-fallidos").text("Fallidos:"+response.result['fallidos']+"");
+          $("#contador-acertados").text("Acertados:"+response.result['acertados']+"");
         },
         error: function(error) {
             
@@ -152,9 +157,14 @@ function limpiarcomponentes(){
     } else {
       $.ajax({
           type: 'POST',
-          url: '../php/reconocer.php',
-          data: { intentosFallidos: 1 },
-          success: function(response) {},
+          url: '../php/scoring.php',
+          data: { intentosFallidos:1 },
+          dataType:'json',
+          success: function(response) {
+           // alert (response.result['fallidos']);
+            $("#contador-fallidos").text("Fallidos:"+response.result['fallidos']+"");
+            $("#contador-acertados").text("Acertados:"+response.result['acertados']+"");
+          },
           error: function(error) {}
       });
       alert("¡Oops! Intenta de nuevo.");
