@@ -1,4 +1,10 @@
-
+.btnCasa
+{
+   position: absolute;
+    top: 8%;
+    left: 88%;
+    width:100px;
+    }
 * {
   margin: 0;
   padding: 0;
@@ -76,6 +82,7 @@ header input {
   user-select: none;
   position: relative;
   text-transform: uppercase;
+  
 }
 .piano-keys .black {
   z-index: 2;
