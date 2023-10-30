@@ -13,22 +13,19 @@
   <div class="contador">
     <p id="contador-fallidos">Fallidos: 0</p>
     <p id="contador-acertados">Acertados:0</p>
+    <a href="reset.php" class="btnReset">Restablecer valores</a>
   </div>
   
     <a href="../html/guitarraelectrica.html" class="guitarraelectrica"></a>
     <a href="../html/violin.html" class="violin"></a>
-    <a href="../html/casa.html" class="btnCasa"></a>
-    <a href="javascript:history.back()">
+    <a href="../html/casa.html" class="btnCasa"> </a>
+    <a href="principal.php">
       <img class="btnCasa" src="../diseño/btnCasa.png">
     </a>
-    
-
-
-
 
   <div class="game-container"> 
-    <button id="play-button">Iniciar sonido</button>
-    <button id="reset-button">Reiniciar</button>
+    <a id="play-button"><img src="../diseño/iniciarSonido.png" width="200px"></a>
+    <a id="reset-button"><img src="../diseño/pausa.png" width="200px"></a>
     <audio id="audio-player"></audio>
     <div id="instrumentos" class="options">
       <div id="resultado-div"></div>

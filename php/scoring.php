@@ -24,10 +24,6 @@ $intentosFallidos = isset($_POST['intentosFallidos']) ? $_POST['intentosFallidos
 $intentosAcertados = isset($_POST['intentosAcertados']) ? $_POST['intentosAcertados']:0;
 
 $idActividad = 1;
-ResetScoring();
-$sqlReset = "UPDATE Perfil SET fallidos = 0, acertados = 0 WHERE idUser = $idUser AND idActividad = $idActividad";
-$mysqli->query($sqlReset);
-
 
 if ($intentosFallidos > 0) 
 {
