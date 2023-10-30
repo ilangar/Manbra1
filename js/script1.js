@@ -123,7 +123,6 @@ function limpiarcomponentes(){
   }
 
   function checkAnswer(selectedIndex) {
-    //alert (selectedIndex);
     if (selectedIndex == correctInstrumentIndex) {
       $.ajax({
         type: 'POST',
@@ -139,8 +138,6 @@ function limpiarcomponentes(){
             
         }
     });
-      alert("¡Correcto! Adivinaste el instrumento correcto.")
-      
       if (grupo==1){
         limpiarcomponentes();
         Recarga("../instrumentos/viento/acordeon.png","acordeon","../instrumentos/viento/piano.png","piano","../instrumentos/viento/trompeta.png","trompeta","../instrumentos/viento/flauta.png","flauta","instruments2");   
@@ -167,7 +164,6 @@ function limpiarcomponentes(){
           },
           error: function(error) {}
       });
-      alert("¡Oops! Intenta de nuevo.");
       if (grupo==1){
         limpiarcomponentes();
         Recarga("../instrumentos/viento/acordeon.png","acordeon","../instrumentos/viento/piano.png","piano","../instrumentos/viento/trompeta.png","trompeta","../instrumentos/viento/flauta.png","flauta","instruments2");   
@@ -189,23 +185,19 @@ function limpiarcomponentes(){
     audioPlayer.pause();
     audioPlayer.currentTime = 0;
   }
-/*
- function registrarpuntaje(){
-   $.ajax({
-      type:'POST',
-      url:'../php/reconocer.php',
-      datatype:'json',
-      data:'',
-      sucess:function(devolucion){
 
+  function ResetScoring() {
+    $.ajax({
+      type: 'POST',
+      url: '../php/scoring.php',
+      data: {},
+      dataType: 'json',
+      success: function(response) {
+        $("#contador-fallidos").text("Fallidos: 0");
+        $("#contador-acertados").text("Acertados: 0");
       },
-      error:function(error){
-
-      },
-
-   });
- }
-
- */
-
+      error: function(error) {
+      }
+    });
+  }
 });

@@ -27,18 +27,22 @@ if ($resultCheck)
         {
             $idUser = $mysqli->insert_id;
 
+            // Recupera las actividades disponibles
             $sqlActividad = "SELECT idActividad FROM Actividades";
             $result_actividad = $mysqli->query($sqlActividad);
-
+ 
             while ($registroActividad = $result_actividad->fetch_assoc()) 
             {
                 $idActividad = $registroActividad["idActividad"];
-                $sqlPerfil = "INSERT INTO Perfil (idUser, idActividad, fallados, acertados) VALUES ('$idUser', '$idActividad', NULL, NULL)";
-                $mysqli->query($sqlPerfil);
+                $sqlPerfil = "INSERT INTO Perfil (idUser, idActividad, fallidos, acertados) VALUES ('$idUser', '$idActividad', 0, 0)";
+                if ($mysqli->query($sqlPerfil) !== TRUE) 
+                {
+                    echo "Error al insertar en Perfil";
+                }
             }
-
-            $result_actividad->free_result();
-            echo "registrado";
+ 
+             $result_actividad->free_result();
+             echo "registrado";
         } 
         else 
         {

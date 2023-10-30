@@ -19,29 +19,21 @@ if (!isset($_SESSION['IDUsuario']))
     exit();
 }
 
+
 $intentosFallidos = isset($_POST['intentosFallidos']) ? $_POST['intentosFallidos']:0;
 $intentosAcertados = isset($_POST['intentosAcertados']) ? $_POST['intentosAcertados']:0;
-//echo $intentosFallidos." ".$intentosAcertados;
 
-
-/*
-if(isset($_POST['intentosAcertados'])){
-  $intentosAcertados = $_POST['intentosAcertados'];
-}
-
-if(isset($_POST['intentosFallidos'])){
-  $intentosFallidos = $_POST['intentosFallidos'];
-}
-*/
 $idActividad = 1;
+ResetScoring();
+$sqlReset = "UPDATE Perfil SET fallidos = 0, acertados = 0 WHERE idUser = $idUser AND idActividad = $idActividad";
+$mysqli->query($sqlReset);
+
 
 if ($intentosFallidos > 0) 
 {
     $sqlFallidos = "UPDATE Perfil SET fallidos = fallidos + $intentosFallidos WHERE idUser = $idUser AND idActividad = $idActividad";
-   // echo $sqlFallidos;
     $mysqli->query($sqlFallidos);
 }
-
 if ($intentosAcertados > 0) 
 {
     $sqlAcertados = "UPDATE Perfil SET acertados = acertados + $intentosAcertados WHERE idUser = $idUser AND idActividad = $idActividad";
