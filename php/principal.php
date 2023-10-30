@@ -20,14 +20,7 @@ session_start();
 
 
     
-    <a href=""><img class="btnAjustes" src="../diseño/btnAjustes.png"></a>
     <a href=""><img class="btnPerfil" src="../diseño/btnPerfil.png"></a>
 
-    
-</head>
-<body>
-    <a href="#" onclick="abrirVentanaEmergente();"><img class="btnAjustes" src="../diseño/btnAjustes.png"></a>
-
-
-</body>
+ 
 </html>
