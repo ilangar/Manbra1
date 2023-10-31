@@ -130,9 +130,9 @@ function limpiarcomponentes(){
         data: { intentosAcertados:1 },
         dataType:'json',
         success: function(response) {
-         // alert (response.result['acertados']);
-          $("#contador-fallidos").text("Fallidos:"+response.result['fallidos']+"");
-          $("#contador-acertados").text("Acertados:"+response.result['acertados']+"");
+          $("#contador-fallidos").html('<img src="../diseño/fallidos.png" width="75px"> ' + response.result['fallidos']).addClass("karantina-font");
+          $("#contador-acertados").html('<img src="../diseño/aciertos.png" width="75px"> ' + response.result['acertados']).addClass("karantina-font");
+  
         },
         error: function(error) {
             
@@ -158,9 +158,8 @@ function limpiarcomponentes(){
           data: { intentosFallidos:1 },
           dataType:'json',
           success: function(response) {
-           // alert (response.result['fallidos']);
-            $("#contador-fallidos").text("Fallidos:"+response.result['fallidos']+"");
-            $("#contador-acertados").text("Acertados:"+response.result['acertados']+"");
+            $("#contador-fallidos").html('<img src="../diseño/fallidos.png" width="75px"> ' + response.result['fallidos']) .addClass("karantina-font");
+            $("#contador-acertados").html('<img src="../diseño/aciertos.png" width="75px"> ' + response.result['acertados']) .addClass("karantina-font");    
           },
           error: function(error) {}
       });

@@ -11,9 +11,9 @@
   <body class="fondo2">
   
   <div class="contador">
-    <p id="contador-fallidos">Fallidos: 0</p>
-    <p id="contador-acertados">Acertados:0</p>
-    <a href="reset.php" class="btnReset">Restablecer valores</a>
+    <p id="contador-fallidos"><img src="../diseño/fallidos.png" width="75px"> <span class="karantina-font">0</span> </p>
+    <p id="contador-acertados"><img src="../diseño/aciertos.png" width="75px"> <span class="karantina-font">0</span> </p>
+    <a href="reset.php" class="btnReset"><img src="../diseño/restablecer.png" width="150px"></a>
   </div>
   
     <a href="../html/guitarraelectrica.html" class="guitarraelectrica"></a>
