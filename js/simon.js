@@ -3,7 +3,7 @@ const simonButtons = document.getElementsByClassName('square');
 const startButton = document.getElementById('startButton');
 
 class Simon {
-    constructor(simonButtons, startButton, round) {
+    constructor(simonButtons, startButton, round, scoreDisplay) {
         this.round = 0;
         this.userPosition = 0;
         this.totalRounds = 10;
@@ -14,6 +14,7 @@ class Simon {
         this.display = {
             startButton,
             round
+        
         }
         this.errorSound = new Audio('../sounds/error.wav');
         this.buttonSounds = [
@@ -21,7 +22,13 @@ class Simon {
             new Audio('../sounds/2.mp3'),
             new Audio('../sounds/3.mp3'),
             new Audio('../sounds/4.mp3'),
+            
         ]
+
+        this.score = 0;
+        this.scoreDisplay = scoreDisplay;
+        this.highScore = 0;
+        
     }
 
     // Inicia el Simon

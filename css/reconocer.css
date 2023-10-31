@@ -9,19 +9,6 @@
 }
 .btnCasa
 {
-   /* background-color: transparent;
-    background-image: url('../diseño/btnAjustes.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: none;
-    color: #fff;
-    padding: 20px 40px;
-    cursor: pointer;
-    display: inline-block;
-    margin: 20px;
-    text-decoration: none;
-    font-size: 25px;*/ 
     position: absolute;
     top: 2%;
     left: 92%;
@@ -30,8 +17,8 @@
 
     .contador {
       position: absolute;
-      top: 300px;
-      left: 350px; /* Ajustamos la distancia desde la izquierda */
+      top: 250px;
+      left: 275px; /* Ajustamos la distancia desde la izquierda */
       display: flex;
       flex-direction: column; /* Cambiamos la dirección a columna */
       align-items: flex-start; /* Alineamos a la izquierda */
@@ -43,22 +30,22 @@
   }
   
   #contador-fallidos {
-      margin-bottom: 10px; /* Espacio entre "Fallidos" y "Restablecer" */
+      margin-bottom: 10px;
   }
   
   .btnReset {
       position: absolute;
-      top: 100px; /* Ajustamos la posición del botón "Restablecer" */
-      left: -5px; /* Ajustamos la distancia desde la izquierda */
+      top: 100px;
+      left: -5px;
   }
   
   
 .game-container {
-    margin-top: 110px; 
+    margin-top: 75px; 
   }
   
-  #play-button, #reset-button {
-    margin-top: 110px; 
+.play-pause {
+    margin-top: 250px;
   }
 
   .karantina-font {

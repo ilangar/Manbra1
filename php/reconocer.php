@@ -23,10 +23,13 @@
       <img class="btnCasa" src="../diseño/btnCasa.png">
     </a>
 
-  <div class="game-container"> 
+    <div class="play-pause"> 
     <a id="play-button"><img src="../diseño/iniciarSonido.png" width="200px"></a>
     <a id="reset-button"><img src="../diseño/pausa.png" width="200px"></a>
     <audio id="audio-player"></audio>
+      </div>
+
+  <div class="game-container"> 
     <div id="instrumentos" class="options">
       <div id="resultado-div"></div>
 
