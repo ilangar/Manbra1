@@ -12,11 +12,14 @@ session_start();
     <link href="../css/simon.css" rel="stylesheet" />
     <script src="../js/simon.js" type="text/javascript" defer></script>
 </head>
+<a href="casa.html" class="btnCasa"></a>
+      <a href="../php/principal.php">
+      <img class="btnCasa" src="../diseño/btnCasa.png"></button>
+      </a>
 <body>
-    <body class="fondo3"></body>
     <div class="simon">
-        <div class="title">Simon</div>
-        <button id="startButton">Start</button>
+        <div class="title"></div>
+        <button id="startButton"></button>
         <div class="buttonContainer">
             <div class="square red"></div>
             <div class="square yellow"></div>
@@ -25,5 +28,12 @@ session_start();
         </div>
         <div id="round"></div>
     </div>
+    <style>
+    body {
+    background-image: url('../diseño/fondosimon.png');
+    background-size: cover;
+}
+
+
 </body>
 </html>

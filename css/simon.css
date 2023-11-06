@@ -1,4 +1,4 @@
-.fondo3 
+.fondo3
     {
         background-image: url('../diseño/FondoSimon.png');
         background-size: cover;
@@ -7,80 +7,90 @@
         text-align: center;
         padding-top: 50px; }
 
-body {
-    display: inline-grid;
-    place-items: center;
-    width: 100%;
-    font-family: 'Merriweather', serif;
-}
+        body {
+            display: inline-grid;
+            place-items: center;
+            width: 100%;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .simon {
+            position: relative;
+            margin-top: 50px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .buttonContainer {
+            display: inline-grid;
+            grid-gap: 10px;
+            grid-template-columns: auto auto;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 200px;
+            right: -120px;
+        }
+        
+        .square {
+            border-radius: 5px;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+        }
+        
+        .square:active,
+        .active {
+            filter: brightness(150%);
+        }
+        
+        .red {
+            background-color: #EE6352;
+            
+        }
+        
+        .blue {
+            background-color: #08B2E3;
+        }
+        
+        .green {
+            background-color: #57A773;
+        }
+        
+        .yellow {
+            background-color: #FFDF64;
+        }
+        
+        #startButton {
+            width: 290px;
+            background-image: url('../diseño/empezar.png');
 
-.simon {
-    position: relative;
-    margin-top: 50px;
-    padding: 10px;
-    border-radius: 5px;
-}
+            position: absolute;
+            top: 40px;
+            right: -100px;
+            border: none;
+            font-family: 'Merriweather', serif;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #587792;
+            padding: 35px;
+        }
+        
+       
+        .title {
+            width: min-content;
+        }
+        
+        .winner {
+            animation: spin 1s ease-in-out;
+        }
 
-.buttonContainer {
-    display: inline-grid;
-    grid-gap: 10px;
-    grid-template-columns: auto auto;
-    transform: rotate(45deg);
-}
-
-.square {
-    border-radius: 5px;
-    width: 150px;
-    height: 150px;
-    cursor: pointer;
-}
-
-.square:active,
-.active {
-    filter: brightness(125%);
-}
-
-.red {
-    background-color: #EE6352;
-}
-
-.blue {
-    background-color: #08B2E3;
-}
-
-.green {
-    background-color: #57A773;
-}
-
-.yellow {
-    background-color: #FFDF64;
-}
-
-#startButton {
-    width: 75px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border: none;
-    font-family: 'Merriweather', serif;
-    cursor: pointer;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #587792;
-    padding: 5px;
-}
-
-#startButton:disabled {
-    background-color: #eee;
-}
-
-.title {
-    width: min-content;
-}
-
-.winner {
-    animation: spin 1s ease-in-out;
-}
-
-@keyframes spin { 
-    100% { transform:rotate(180deg) } }
+        .btnCasa
+        {
+            position: absolute;
+            top: 70px;
+            right: 100px;
+        }
+        
+        @keyframes spin { 
+            100% { transform:rotate(180deg) } }
