@@ -116,6 +116,11 @@ class Simon {
         this.errorSound.play();
         this.display.startButton.disabled = false; 
         this.blockedButtons = true;
+          // Lógica para reiniciar las rondas
+          this.round = 0;
+          this.updateRound(0);
+          this.display.round.textContent = 'Round 0';
+         
     }
 
     // Muestra la animacón de triunfo y actualiza el simon cuando el jugador gana

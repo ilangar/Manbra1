@@ -4,6 +4,8 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../css/musicograma.css">
+
     <style>
         
     body {
@@ -15,9 +17,8 @@ session_start();
             flex-wrap: wrap;
             justify-content: center; /* Centra horizontalmente el contenido */
             align-items: flex-end; /* Coloca el contenido en la parte inferior */
-            height: 50vh; /* Altura del 80% del viewport height (altura de la ventana) */
-            background-color: #f0f0f0; /* Fondo gris claro para el contenedor */
-        }
+            height: 70vh; /* Altura del 80% del viewport height (altura de la ventana) */
+            background-color: rgba(255,255,255,0);        }
 
         .image {
             width: 100px;
@@ -51,14 +52,20 @@ session_start();
         }
     </style>
 </head>
+<a href="casa.html" class="btnCasa"></a>
+      <a href="../php/principal.php">
+      <img class="btnCasa" src="../diseño/btnCasa.png"></button>
+      </a>
 <body>
-    <h1>Generador de Patrones de Imágenes</h1>
     
     <div class="image-container" id="image-container">
         <!-- Deja este espacio vacío para las imágenes iniciales -->
     </div>
     
     <div class="image-drop-container" id="image-drop-container"></div>
+
+    <button id="resetButton">Resetear Imágenes</button>
+
 
     <script>
         const images = ["../diseño/hamburguesa.png", "../diseño/platillos.png", "../diseño/silencio.png", "../diseño/chasquido.png", "../diseño/aplauso.png", "../diseño/bongo.png", "../diseño/xilofono.png"]; // Rutas de las imágenes
@@ -100,6 +107,13 @@ session_start();
                 }
             }
         };
+        const resetButton = document.getElementById('resetButton');
+        resetButton.addEventListener('click', () => {
+            // Remueve todos los elementos del contenedor inferior
+            while (imageDropContainer.firstChild) {
+                imageDropContainer.removeChild(imageDropContainer.firstChild);
+            }
+        });
     </script>
 </body>
 </html>
