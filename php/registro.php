@@ -34,7 +34,7 @@ if ($resultCheck)
             while ($registroActividad = $result_actividad->fetch_assoc()) 
             {
                 $idActividad = $registroActividad["idActividad"];
-                $sqlPerfil = "INSERT INTO Perfil (idUser, idActividad, fallidos, acertados) VALUES ('$idUser', '$idActividad', 0, 0)";
+                $sqlPerfil = "INSERT INTO Perfil (idUser, idActividad, fallidos, acertados, ronda) VALUES ('$idUser', '$idActividad', 0, 0, 0)";
                 if ($mysqli->query($sqlPerfil) !== TRUE) 
                 {
                     echo "Error al insertar en Perfil";

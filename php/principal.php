@@ -15,7 +15,7 @@ session_start();
 
     <a href="../html/piano.html" class="btnPiano"></a>
     <a href="reconocer.php" class="btnReconocer"></a>
-    <a href="simon.php" class="btnSimon"></a>
+    <a href="../html/simon.html" class="btnSimon"></a>
     <a href="musicograma.php" class="btnMusicograma"></a>
 
 

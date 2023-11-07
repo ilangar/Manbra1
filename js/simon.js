@@ -44,6 +44,7 @@ class Simon {
 
     // Actualiza la ronda y el tablero
     updateRound(value) {
+        scoringsimon(value);
         this.round = value;
         this.display.round.textContent = `Round ${this.round}`;
     }
@@ -136,3 +137,19 @@ class Simon {
 
 const simon = new Simon(simonButtons, startButton, round);
 simon.init();
+
+function scoringsimon(valor){
+    $.ajax({
+        type: 'POST',
+        url: '../php/simonscoring.php',
+        data: { ronda:valor },
+        dataType:'json',
+        success: function(response) {
+          
+        },
+        error: function(error) {
+            
+        }
+    });
+
+}
