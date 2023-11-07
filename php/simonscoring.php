@@ -24,12 +24,32 @@ $ronda = 0;
 $rondas = $ronda + $_POST['ronda'];
 $rondasFinal = $rondas;
 
-$sql = "SELECT ronda FROM Perfil WHERE idUser = $idUser AND idActividad = $idActividad"
-$puntajeAnterior = $_SESSION['ronda']
+$sql = "SELECT ronda FROM Perfil WHERE idUser = $idUser AND idActividad = $idActividad";
+$result = $mysqli->query($sql);
 
-if ($rondasFinal > ronda)
+if ($result) 
 {
-$sqlMayor = "UPDATE Perfil SET ronda = $rondasFinal WHERE idUser = $idUser AND idActividad = $idActividad"; 
-$mysqli->query($sqlMayor);
+    $row = $result->fetch_assoc();
+    $puntajeAnterior = $row['ronda'];
+} 
+else 
+{
+    die("Error en la consulta: " . $mysqli->error);
+}
+
+if ($rondasFinal > $puntajeAnterior)
+{
+    $sqlMayor = "UPDATE Perfil SET ronda = $rondasFinal WHERE idUser = $idUser AND idActividad = $idActividad"; 
+    $mysqli->query($sqlMayor);
+}
+
+$sqlPuntaje = "SELECT ronda FROM Perfil WHERE idUser = $idUser AND idActividad = $idActividad";
+$resultado = $mysqli->query($sql);
+
+if ($resultado) 
+{
+    $row = $resultado->fetch_assoc();
+    $mayorPuntaje = $row['ronda'];
+    echo $mayorPuntaje;
 }
 ?>

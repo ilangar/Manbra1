@@ -1,4 +1,7 @@
-<html>
+<?php 
+session_start();
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +14,7 @@
     <script src="../js/simon.js" type="text/javascript" defer></script>
 </head>
 <a href="casa.html" class="btnCasa"></a>
-      <a href="../php/principal.php">
+      <a href="principal.php">
       <img class="btnCasa" src="../diseño/btnCasa.png"></button>
       </a>
 <body>

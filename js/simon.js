@@ -143,9 +143,10 @@ function scoringsimon(valor){
         type: 'POST',
         url: '../php/simonscoring.php',
         data: { ronda:valor },
-        dataType:'json',
+        dataType:'text',
         success: function(response) {
-          
+            $("#MP").html(response);
+           // alert (response);
         },
         error: function(error) {
             
