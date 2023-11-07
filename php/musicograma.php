@@ -67,7 +67,7 @@ session_start();
     
     <div class="image-drop-container" id="image-drop-container"></div>
 
-    <button id="resetButton">Resetear Imágenes</button>
+    <button id="resetButton">Reiniciar</button>
 
 
     <script>
