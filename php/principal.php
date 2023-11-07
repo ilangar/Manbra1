@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 
     <a href="../html/piano.html" class="btnPiano"></a>
     <a href="reconocer.php" class="btnReconocer"></a>
-    <a href="../html/simon.html" class "btnSimon"></a>
+    <a href="../html/simon.html" class="btnSimon"></a>  
     <a href="musicograma.php" class="btnMusicograma"></a>
 
     <!-- Menú de perfil -->
