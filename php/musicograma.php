@@ -3,35 +3,37 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-<head>
 <link rel="stylesheet" href="../css/musicograma.css">
 
+<head>
     <style>
-        
-    body {
-    background-image: url('../diseño/fondomusicograma.png');
-    background-size: cover;
-}
+        body {
+            background-image: url('../diseño/fondomusicograma.png');
+            background-size: cover;
+        }
+
         .image-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center; /* Centra horizontalmente el contenido */
             align-items: flex-end; /* Coloca el contenido en la parte inferior */
-            height: 70vh; /* Altura del 80% del viewport height (altura de la ventana) */
-            background-color: rgba(255,255,255,0);        }
+            height: 70vh; /* Altura del 70% del viewport height (altura de la ventana) */
+            background-color: rgba(255, 255, 255, 0);
+        }
 
         .image {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             margin: 10px;
             cursor: grab;
+            margin-bottom: 120px; /* Ajusta el margen inferior para posicionar las imágenes más arriba */
         }
 
         body {
             margin: 0; /* Elimina los márgenes predeterminados del cuerpo de la página */
             display: flex;
             flex-direction: column;
-            height: 100vh; /* Altura del 100% del viewport height (altura de la ventana) */
+            height: 93vh; /* Altura del 100% del viewport height (altura de la ventana) */
         }
 
         h1 {
@@ -58,6 +60,7 @@ session_start();
       </a>
 <body>
     
+    
     <div class="image-container" id="image-container">
         <!-- Deja este espacio vacío para las imágenes iniciales -->
     </div>
@@ -68,7 +71,7 @@ session_start();
 
 
     <script>
-        const images = ["../diseño/hamburguesa.png", "../diseño/platillos.png", "../diseño/silencio.png", "../diseño/chasquido.png", "../diseño/aplauso.png", "../diseño/bongo.png", "../diseño/xilofono.png"]; // Rutas de las imágenes
+        const images = [ "../diseño/platillos.png", "../diseño/silencio.png", "../diseño/chasquido.png", "../diseño/aplauso.png", "../diseño/bongo.png", "../diseño/xilofono.png"]; // Rutas de las imágenes
         const imageContainer = document.getElementById('image-container');
         const imageDropContainer = document.getElementById('image-drop-container');
         const maxImages = 6; // Número máximo de imágenes en el contenedor de abajo
