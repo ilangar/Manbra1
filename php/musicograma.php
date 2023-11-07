@@ -68,6 +68,8 @@ session_start();
     <div class="image-drop-container" id="image-drop-container"></div>
 
     <button id="resetButton">Reiniciar</button>
+    <button id="Guardar">Guardar</button>
+
 
 
     <script>

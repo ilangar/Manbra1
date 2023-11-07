@@ -11,38 +11,36 @@
 
     <a href="../html/piano.html" class="btnPiano"></a>
     <a href="reconocer.php" class="btnReconocer"></a>
-    <a href="../html/simon.html" class="btnSimon"></a>
+    <a href="../html/simon.html" class "btnSimon"></a>
     <a href="musicograma.php" class="btnMusicograma"></a>
 
-    <div class="menu" id="menu" style="left: -100%;"> <!-- Agrega style="left: -100%;" -->
-      <img src="../diseño/registroventana.png" alt="Contenido del Menú">
-      
-      <a href="tu-pagina-de-login.html" class="menu-button" id="menuButton" style="display: none;"> <!-- Agrega style="display: none;" -->
-        <img src="../diseño/btnLogIn.png" alt="Botón Login">
-      </a>
-      <img src="../diseño/NOMBRE DE USUARIO.png" alt="Nombre de Usuario" class="menu-image" id="menuImage" style="display: none;"> <!-- Agrega style="display: none;" -->
+    <!-- Menú de perfil -->
+    <div id="menuPerfil" class="menu" style="left: -100%;">
+      <div class="menu-content">
+        <div class="usuario">Nombre de Usuario</div>
+        <button id="cerrarSesion">Cerrar Sesión</button>
+        <a href="musicograma.php" class="menu-button">Musicogramas</a>
+      </div>
     </div>
-    
+
     <a href="#" id="mostrarMenu">
       <img class="btnPerfil" src="../diseño/btnPerfil.png" alt="Botón Perfil">
     </a>
     <script>
       window.onload = function() {
         document.getElementById("mostrarMenu").addEventListener("click", function() {
-          var menu = document.getElementById("menu");
-          if (menu.style.left === "-100%") {
-            menu.style.left = "0";
-            
-            // Muestra el botón e imagen cuando el menú se abre
-            document.getElementById("menuButton").style.display = "block";
-            document.getElementById("menuImage").style.display = "block";
+          var menuPerfil = document.getElementById("menuPerfil");
+          if (menuPerfil.style.left === "-100%") {
+            menuPerfil.style.left = "0";
           } else {
-            menu.style.left = "-100%";
-            
-            // Oculta el botón e imagen cuando el menú se cierra
-            document.getElementById("menuButton").style.display = "none";
-            document.getElementById("menuImage").style.display = "none";
+            menuPerfil.style.left = "-100%";
           }
+        });
+
+        // Agrega el evento para cerrar la sesión
+        document.getElementById("cerrarSesion").addEventListener("click", function() {
+          // Redirige a la página de cierre de sesión
+          window.location.href = "cerrar-sesion.php";
         });
       };
     </script>

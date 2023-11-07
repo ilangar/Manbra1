@@ -11,5 +11,14 @@
     padding: 5px 10px; /* Espaciado interno deseado */
     position: absolute;
     top: 200px;
-    right: 630px;
+    right: 700px;
+}
+#Guardar {
+    width: 100px; /* Ancho deseado */
+    height: 30px; /* Alto deseado */
+    font-size: 14px; /* Tamaño de fuente deseado */
+    padding: 5px 10px; /* Espaciado interno deseado */
+    position: absolute;
+    top: 200px;
+    right: 500px;
 }
