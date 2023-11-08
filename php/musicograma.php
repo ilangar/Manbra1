@@ -73,7 +73,7 @@ session_start();
 
 
     <script>
-        const images = [ "../diseño/platillos.png", "../diseño/silencio.png", "../diseño/chasquido.png", "../diseño/aplauso.png", "../diseño/bongo.png", "../diseño/xilofono.png"]; // Rutas de las imágenes
+        const images = [ "../diseño/silencio.png", "../diseño/chasquido.png", "../diseño/aplauso.png", "../diseño/zapateo.png", "../diseño/golpeo.png"]; // Rutas de las imágenes
         const imageContainer = document.getElementById('image-container');
         const imageDropContainer = document.getElementById('image-drop-container');
         const maxImages = 6; // Número máximo de imágenes en el contenedor de abajo

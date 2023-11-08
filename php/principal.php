@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,8 @@
 <body class="fondo1">
 
     <a href="../html/piano.html" class="btnPiano"></a>
-    <a href="reconocer.php" class="btnReconocer"></a>
-    <a href="../html/simon.html" class="btnSimon"></a>  
+    <a href="reconocer.php" class= btnReconocer></a>
+    <a href="../html/simon.html" class="btnSimon"></a>
     <a href="musicograma.php" class="btnMusicograma"></a>
 
     <!-- Menú de perfil -->
@@ -27,6 +27,10 @@
       <img class="btnPerfil" src="../diseño/btnPerfil.png" alt="Botón Perfil">
     </a>
     <script>
+      function cerrarSesion() {
+        window.location.href = "index.html";
+      }
+
       window.onload = function() {
         document.getElementById("mostrarMenu").addEventListener("click", function() {
           var menuPerfil = document.getElementById("menuPerfil");
@@ -38,10 +42,7 @@
         });
 
         // Agrega el evento para cerrar la sesión
-        document.getElementById("cerrarSesion").addEventListener("click", function() {
-          // Redirige a la página de cierre de sesión
-          window.location.href = "cerrar-sesion.php";
-        });
+        document.getElementById("cerrarSesion").addEventListener("click", cerrarSesion);
       };
     </script>
 </body>
