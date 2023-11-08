@@ -28,7 +28,7 @@
     </a>
     <script>
       function cerrarSesion() {
-        window.location.href = "index.html";
+        window.location.href = "../html/index.html";
       }
 
       window.onload = function() {
