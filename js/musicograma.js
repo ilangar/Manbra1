@@ -1,6 +1,6 @@
 const instrumentContainer = document.getElementById("instrument-container");
 const instrumentList = document.getElementById("instrument-list");
-
+let orden='';
 
 const instruments = [
     "../diseño/hamburguesa.png",

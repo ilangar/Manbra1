@@ -1,37 +1,10 @@
-<?php
-session_start();
-$_ENV = parse_ini_file("../.env");
-$mysqli = mysqli_init();
-$mysqli->ssl_set(NULL, NULL, "../cacert.pem", NULL, NULL);
-$mysqli->real_connect($_ENV["DB_HOST"], $_ENV["DB_USERNAME"], $_ENV["DB_PASSWORD"], $_ENV["DB_NAME"]);
-
-if ($mysqli->connect_error)  
-{
-    die("Conexión fallida: " . $mysqli->connect_error);
-}
-
-$sql = "SELECT idUser FROM usuarios WHERE usuario";
-$idUser = $_SESSION['IDUsuario'];
-
-if (!isset($_SESSION['IDUsuario'])) 
-{
-    header("Location: ../html/inicioSesion.html"); 
-    exit();
-}
-
-$patron = $_POST['patron'];
-
-$sql = "INSERT INTO Musicogramas (idUser, patron) VALUES ('$idUser', '$patron')";
-$sql = $mysqli->query($sql);
-
-$mysqli->close();
-?>
-?>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="../css/musicograma.css">
+
 
 <head>
+<link rel="stylesheet" href="../css/musicograma.css">
+<script src="../js/jquery-3.3.1.js"></script>
     <style>
         body {
             background-image: url('../diseño/fondomusicograma.png');
@@ -128,6 +101,8 @@ $mysqli->close();
         // Manejar el soltar de la imagen en el contenedor inferior
         imageDropContainer.ondragover = (event) => event.preventDefault();
 
+        Patron='';
+
         imageDropContainer.ondrop = (event) => {
             event.preventDefault();
             if (imageDropContainer.childElementCount < maxImages) {
@@ -135,9 +110,37 @@ $mysqli->close();
                 if (imageSrc) {
                     const image = createImageElement(imageSrc);
                     imageDropContainer.appendChild(image);
+                    parseo=image.src.split("/");
+                    if (Patron==''){
+                        Patron=parseo[6];
+                    }else{
+                        Patron=Patron+'X'+parseo[6];
+                    }
+                    
+                 }
                 }
             }
-        };
+        }
+
+        $("#Guardar").click(function(){
+
+            $.ajax({
+                    type: 'POST',
+                    url: 'guardarPatron.php',
+                    data: {"patron="+Patron+""},
+                    dataType: 'text',
+                    success: function(response) {
+                        alert(response);
+                    },
+                        error: function(error) {
+                    }
+                    });
+
+        });
+           
+        
+
+
         const resetButton = document.getElementById('resetButton');
         resetButton.addEventListener('click', () => {
             // Remueve todos los elementos del contenedor inferior
