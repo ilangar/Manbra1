@@ -16,14 +16,14 @@
     background-position: center;
     border: none;
     color: #fff;
-    padding: 70px 140px;
+    padding: 70px 70px;
     cursor: pointer;
     display: inline-block;
     margin: 20px; 
     text-decoration: none;
     font-size: 25px;
     position: relative; 
-    top: 400px; 
+    top: 325px; 
 
 }
 .btnReconocer
@@ -35,14 +35,14 @@
     background-position: center;
     border: none;
     color: #fff;
-    padding: 70px 140px;
+    padding: 70px 70px;
     cursor: pointer;
     display: inline-block;
     margin: 20px;
     text-decoration: none;
     font-size: 25px;
     position: relative; 
-    top: 400px; 
+    top: 325px; 
 }
 .btnPiano
 {
@@ -53,14 +53,14 @@
     background-position: center;
     border: none;
     color: #fff;
-    padding: 70px 140px;
+    padding: 70px 70px;
     cursor: pointer;
     display: inline-block;
     margin: 20px;
     text-decoration: none;
     font-size: 25px;
     position: relative; 
-    top: 400px; 
+    top: 325px; 
 }
 .btnMusicograma
 {
@@ -71,14 +71,14 @@
     background-position: center;
     border: none;
     color: #fff;
-    padding: 70px 140px;
+    padding: 70px 70px;
     cursor: pointer;
     display: inline-block;
     margin: 20px;
     text-decoration: none;
     font-size: 25px;
     position: relative; 
-    top: 400px; 
+    top: 325px; 
 }
 
     
@@ -124,4 +124,34 @@
         left: 20px;
         z-index: 2;
       }
-      
+
+      #cerrarSesion {
+        background-image: url('../diseño/cerrarsesion.png');
+          background-size: 100% 100%; 
+          background-repeat: no-repeat; 
+          width: 250px; 
+          height: 75px; 
+          text-indent: -9999px; 
+          border: none; 
+          cursor: pointer;
+          margin-left: 0px; 
+          margin-top: 500px;
+          background-color: rgba(255, 255, 255, 0); /* Fondo transparente (0 de opacidad) */
+    }
+    
+    #usuario
+    {
+      background-image: url('../diseño/USUARIO.png');
+
+      font-size: 40px;
+      position: absolute;
+      top: 30%;
+      left: 15%;
+    }
+    #musicogramas
+    {  
+      font-size: 40px;
+      position: absolute;
+      top: 50%;
+      left: 30%;
+    }

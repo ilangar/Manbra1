@@ -10,14 +10,14 @@
         #usuario {
             background-image: url('../diseño/espacio.png');
 
-            margin-left: -850px; /* Puedes ajustar el valor según tus necesidades */
+            margin-left: 0px; /* Puedes ajustar el valor según tus necesidades */
             border: 2px solid #ccc; /* Añade un borde al campo de entrada */
             border-radius: 10px; /* Añade esquinas redondeadas (ajusta el valor según sea necesario) */
             padding: 5px; 
             padding-top:20px;
             width:400px;
             font-size: 25px;
-            margin-top: 120px;
+            margin-top: 170px;
 
           }
           
@@ -25,7 +25,7 @@
         {
             background-image: url('../diseño/espacio.png');
 
-            margin-left: -850px; /* Puedes ajustar el valor según tus necesidades */
+            margin-left: 0px; /* Puedes ajustar el valor según tus necesidades */
             border: 2px solid #ccc; /* Añade un borde al campo de entrada */
             border-radius: 10px; /* Añade esquinas redondeadas (ajusta el valor según sea necesario) */
             padding: 5px; 
@@ -33,7 +33,7 @@
             width:400px;
             font-size: 25px;
             
-            margin-top: 130px;
+            margin-top: 80px;
         }
         
         #LogIn {
@@ -45,7 +45,7 @@
             text-indent: -9999px; 
             border: none; 
             cursor: pointer;
-            margin-left: -850px; 
+            margin-left: 0px; 
             margin-top: 50px;
             background-color: rgba(255, 255, 255, 0); /* Fondo transparente (0 de opacidad) */
 
@@ -53,7 +53,7 @@
 
           #mensaje
           {
-            margin-left: -850px; 
+            margin-left: 0px; 
             font-size: 20px;
             
 
@@ -61,7 +61,7 @@
           /* styles.css */
 p {
 
-    margin-left: -850px; 
+    margin-left: 0px; 
 
 }
 
