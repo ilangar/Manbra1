@@ -5,20 +5,28 @@
     right: 50px;
 }
 #resetButton {
-    width: 100px; /* Ancho deseado */
-    height: 30px; /* Alto deseado */
-    font-size: 14px; /* Tamaño de fuente deseado */
-    padding: 5px 10px; /* Espaciado interno deseado */
-    position: absolute;
-    top: 200px;
-    right: 700px;
+    background-image: url('../diseño/reiniciar.png');
+             background-size: 100% 100%; 
+            background-repeat: no-repeat; 
+            width: 250px; 
+            height: 75px; 
+            text-indent: -9999px; 
+            border: none; 
+            cursor: pointer;
+            margin-left: 400px; 
+            margin-top: -550px;
+            background-color: rgba(255, 255, 255, 0);
 }
 #Guardar {
-    width: 100px; /* Ancho deseado */
-    height: 30px; /* Alto deseado */
-    font-size: 14px; /* Tamaño de fuente deseado */
-    padding: 5px 10px; /* Espaciado interno deseado */
-    position: absolute;
-    top: 200px;
-    right: 500px;
+    background-image: url('../diseño/guardar.png');
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+    width: 250px; 
+    height: 75px; 
+    text-indent: -9999px; 
+    border: none; 
+    cursor: pointer;
+    margin-left: 700px; 
+    margin-top: -75px;
+    background-color: rgba(255, 255, 255, 0);
 }
