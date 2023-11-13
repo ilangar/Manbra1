@@ -1,36 +1,94 @@
-const instrumentContainer = document.getElementById("instrument-container");
-const instrumentList = document.getElementById("instrument-list");
-let orden='';
+const images = [ "../diseño/silencio.png", "../diseño/chasquido.png", "../diseño/aplauso.png", "../diseño/zapateo.png", "../diseño/golpeo.png"]; // Rutas de las imágenes
+        const imageContainer = document.getElementById('image-container');
+        const imageDropContainer = document.getElementById('image-drop-container');
+        const maxImages = 6; 
 
-const instruments = [
-    "../diseño/hamburguesa.png",
-    "../diseño/platillos.png",
-    "../diseño/silencio.png",
-    "../diseño/chasquido.png",
-    "../diseño/aplauso.png",
-    "../diseño/bongo.png",
-    "../diseño/xilofono.png"
-];
+        images.forEach((imageSrc, index) => {
+            const image = createImageElement(imageSrc);
+            imageContainer.appendChild(image);
+        });
 
+        function createImageElement(imageSrc) {
+            const image = document.createElement('img');
+            image.src = imageSrc;
+            image.className = 'image';
+            image.draggable = true;
+            image.setAttribute('ondragstart', 'drag(event)');
+            return image;
+        }
 
-instruments.forEach(instrument => {
-    const img = document.createElement("img");
-    img.src = `diseño/${instrument}`; // Asegúrate de que las imágenes estén en la carpeta "diseño"
-    img.addEventListener("click", () => selectInstrument(instrument));
-    instrumentList.appendChild(img);
+        function drag(event) {
+            event.dataTransfer.setData('image', event.target.src);
+        }
+
+        imageDropContainer.ondragover = (event) => event.preventDefault();
+
+        let Patron = '';
+
+imageDropContainer.ondrop = (event) => {
+    event.preventDefault();
+    if (imageDropContainer.childElementCount < maxImages) {
+        const imageSrc = event.dataTransfer.getData('image');
+        if (imageSrc) {
+            const image = createImageElement(imageSrc);
+            imageDropContainer.appendChild(image);
+            parseo = imageSrc.split("/");
+            if (Patron == ''){
+                Patron=parseo[6];
+            }else{
+                Patron = Patron + 'X' + parseo[6];
+            }
+        }
+    }
+}
+
+$("#Guardar").click(function () {
+    $.ajax({
+        type: 'POST',
+        url: 'guardarPatron.php',
+        data: { patron: Patron }, 
+        dataType: 'text',
+        success: function (response) {
+            alert(response);
+        },
+        error: function (error) {
+            console.error(error);
+        }
+    });
 });
 
-const selectedInstruments = [];
+           
+        
 
-function selectInstrument(instrument) {
-    if (selectedInstruments.length >= 6) {
-        alert("Ya has seleccionado 6 instrumentos.");
-        return;
-    }
 
-    selectedInstruments.push(instrument);
+        const resetButton = document.getElementById('resetButton');
+        resetButton.addEventListener('click', () => {
+            while (imageDropContainer.firstChild) {
+                imageDropContainer.removeChild(imageDropContainer.firstChild);
+            }
+        });
 
-    const img = document.createElement("img");
-    img.src = `diseño/${instrument}`; // Asegúrate de que las imágenes estén en la carpeta "diseño"
-    instrumentContainer.appendChild(img);
-}
+        $(document).ready(function () {
+
+            $("#Guardar").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "../php/guardarPatron.php",
+                    dataType: "text",
+                    data: "",
+                    success: function (devolucion) {
+                        $("#mensaje").html(devolucion);
+                        
+                        if (devolucion == "Patrón guardado correctamente") {
+                            $("#mensaje").css("color", "black");
+                        } else {
+                            $("#mensaje").css("color", "red");
+                        }
+                    },
+                    error: function (error) {
+                    }
+                });
+            });
+        
+        });
+        

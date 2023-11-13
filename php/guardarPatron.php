@@ -19,10 +19,22 @@ if (!isset($_SESSION['IDUsuario']))
     exit();
 }
 
-$patron = $_POST['patron'];
+$patron = isset($_POST['patron']) ? $_POST['patron'] : '';
 
-$sql = "INSERT INTO Musicogramas (idUser, patron) VALUES ('$idUser', '$patron')";
-$sql = $mysqli->query($sql);
+if (!empty($patron)) 
+{
+    $sql = "INSERT INTO Musicogramas (idUser, patron) VALUES ('$idUser', '$patron')";
+    if ($mysqli->query($sql)) 
+    {
+        $guardadoExitoso = "Patrón guardado correctamente";
+        echo $guardadoExitoso;
+    } 
+    else 
+    {
+        $guardadoExitoso = "Error al guardar el patrón" . $mysqli->error;
+        echo $guardadoFracasado;
+    }
+} 
 
 $mysqli->close();
 ?>

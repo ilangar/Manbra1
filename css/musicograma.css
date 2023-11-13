@@ -1,32 +1,81 @@
-.btnCasa
-{
-    position: absolute;
-    top: 70px;
-    right: 50px;
+body {
+    background-image: url('../diseño/fondomusicograma.png');
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 93vh;
 }
-#resetButton {
-    background-image: url('../diseño/reiniciar.png');
-             background-size: 100% 100%; 
-            background-repeat: no-repeat; 
-            width: 150px; 
-            height: 50px; 
-            text-indent: -9999px; 
-            border: none; 
-            cursor: pointer;
-            margin-left: 500px; 
-            margin-top: -550px;
-            background-color: rgba(255, 255, 255, 0);
-}
-#Guardar {
-    background-image: url('../diseño/guardar.png');
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
-    width: 150px; 
-    height: 50px; 
-    text-indent: -9999px; 
-    border: none; 
-    cursor: pointer;
-    margin-left: 700px; 
-    margin-top: -50px;
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    height: 70vh;
     background-color: rgba(255, 255, 255, 0);
 }
+
+.image {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    cursor: grab;
+    margin-bottom: 120px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.image-drop-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    height: 20vh;
+}
+
+.image-drop-container .image {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+button {
+    display: inline-block;
+    margin: 10px;
+    padding: 0;
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#Guardar {
+    background-image: url('../diseño/guardar.png');
+    background-size: cover; 
+}
+
+#resetButton {
+    background-image: url('../diseño/reiniciar.png');
+    background-size: cover; 
+}
+
+#mensaje {
+    margin-left: 0;
+    font-size: 20px;
+    color: red; 
+}
+
+p {
+
+    margin-left: 0px; 
+
+}
+
+.karantina-font {
+    font-family: 'Karantina', sans-serif;
+  }
+  
