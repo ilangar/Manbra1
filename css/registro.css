@@ -1,34 +1,96 @@
 .fondo5 
     {
-        background-image: url('../diseño/FondoInicioSesion.png');
+        background-image: url('../diseño/FondoRegistro.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
         text-align: center;
         padding-top: 50px; 
     }
-    .btnventana
+    #nombre
 {
-    background-color: transparent;
-    background-image: url('../diseño/registroventana.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: none;
-    color: #fff;
-    padding: 50px 100px;
-    cursor: pointer;
-    display: inline-block;
-    margin: 20px; 
-    text-decoration: none;
-    font-size: 25px;
-    position: relative; 
-    top: 350px; 
+    background-image: url('../diseño/espacio.png');
+
+            margin-left: 0px; /* Puedes ajustar el valor según tus necesidades */
+            border: 2px solid #ccc; /* Añade un borde al campo de entrada */
+            border-radius: 10px; /* Añade esquinas redondeadas (ajusta el valor según sea necesario) */
+            padding: 5px; 
+            padding-top:20px;
+            width:400px;
+            font-size: 25px;
+            margin-top: 80px; 
 }
-    /*
-    .ventana
-     {
-        position: absolute;
-        width: 50px;
-        height: 50px; 
-    }
+#apellido
+{
+     margin-left: 0px; /* Puedes ajustar el valor según tus necesidades */
+            border: 2px solid #ccc; /* Añade un borde al campo de entrada */
+            border-radius: 10px; /* Añade esquinas redondeadas (ajusta el valor según sea necesario) */
+            padding: 5px; 
+            padding-top:20px;
+            width:400px;
+            font-size: 25px;
+            margin-top: 80px; 
+}
+      
+        #usuario {
+            background-image: url('../diseño/espacio.png');
+
+            margin-left: 0px; /* Puedes ajustar el valor según tus necesidades */
+            border: 2px solid #ccc; /* Añade un borde al campo de entrada */
+            border-radius: 10px; /* Añade esquinas redondeadas (ajusta el valor según sea necesario) */
+            padding: 5px; 
+            padding-top:20px;
+            width:400px;
+            font-size: 25px;
+            margin-top: 80px;
+
+          }
+          
+        #contrasena
+        {
+            background-image: url('../diseño/espacio.png');
+
+            margin-left: 0px; /* Puedes ajustar el valor según tus necesidades */
+            border: 2px solid #ccc; /* Añade un borde al campo de entrada */
+            border-radius: 10px; /* Añade esquinas redondeadas (ajusta el valor según sea necesario) */
+            padding: 5px; 
+            padding-top:20px;
+            width:400px;
+            font-size: 25px;
+            
+            margin-top: 80px;
+        }
+        
+        #Reg {
+            background-image: url('../diseño/Registrarse.png'); 
+            background-size: 100% 100%; 
+            background-repeat: no-repeat; 
+            width: 250px; 
+            height: 75px; 
+            text-indent: -9999px; 
+            border: none; 
+            cursor: pointer;
+            margin-left: 0px; 
+            margin-top: 10px;
+            background-color: rgba(255, 255, 255, 0); /* Fondo transparente (0 de opacidad) */
+
+          }
+
+          #mensaje
+          {
+            margin-left: 0px; 
+            font-size: 20px;
+            
+
+          }
+          /* styles.css */
+p {
+
+    margin-left: 0px; 
+
+}
+
+.karantina-font {
+    font-family: 'Karantina', sans-serif;
+  }
+  

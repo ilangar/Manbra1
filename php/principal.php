@@ -17,9 +17,9 @@
     <!-- Menú de perfil -->
     <div id="menuPerfil" class="menu" style="left: -100%;">
       <div class="menu-content">
-        <div class="usuario">Nombre de Usuario</div>
-        <button id="cerrarSesion">Cerrar Sesión</button>
-        <a href="musicograma.php" class="menu-button">Musicogramas</a>
+        <div id="usuario">Nombre de Usuario</div>
+        <button id="musicogramas">Musicogramas</button>
+        <button id="cerrarSesion"></button>
       </div>
     </div>
 
