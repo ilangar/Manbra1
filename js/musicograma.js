@@ -1,6 +1,7 @@
 const instrumentContainer = document.getElementById("instrument-container");
 const instrumentList = document.getElementById("instrument-list");
 
+
 const instruments = [
     "../diseño/hamburguesa.png",
     "../diseño/platillos.png",
