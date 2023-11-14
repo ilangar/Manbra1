@@ -39,6 +39,8 @@ class Simon {
             element.classList.remove('winner');
             element.onclick = () => this.buttonClick(i);
         });
+        round.style.display = 'block'; // Muestra #round al comenzar
+
         this.showSequence();
     }
 

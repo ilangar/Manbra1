@@ -31,6 +31,28 @@
             right: -120px;
         }
         
+        #mayorPuntaje
+        {
+            font-size: 22px;
+            position: absolute;
+            top: 200px;
+            left: -550px;
+            background-color: mintcream;
+            padding: 20px;
+            border: 5px solid #333;
+        }
+        #round
+        {
+        position: absolute;
+            top: 100px;
+            left: -550px;
+            background-color: mintcream;
+            padding: 20px;
+            border: 5px solid #333;
+            font-size: 22px;
+            display: none; /* Oculta el elemento inicialmente */
+
+        }
         .square {
             border-radius: 5px;
             width: 150px;
@@ -72,8 +94,9 @@
             cursor: pointer;
             border-radius: 5px;
             color: #fff;
-            background-color: #587792;
-            padding: 35px;
+            background-color: #00FF0000;
+            padding: 30px;
+            width: 270px;
         }
         
        
@@ -88,7 +111,7 @@
         .btnCasa
         {
             position: absolute;
-            top: 70px;
+            top: 80px;
             right: 100px;
         }
         
