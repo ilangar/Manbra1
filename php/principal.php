@@ -49,8 +49,9 @@ $mysqli->close();
     <!-- Menú de perfil -->
     <div id="menuPerfil" class="menu" style="left: -100%;">
       <div class="menu-content">
-        <div id="usuario"> Nombre de usuario: <?php echo  $nombreUsuario; ?></div>
-        <button id="musicogramas">Musicogramas</button>
+        <div id="usuario"> Nombre de usuario <div>
+        </div id= nombreUsuario><?php echo  $nombreUsuario; ?></div>
+        <button id="musicogramas"></button>
         <button id="cerrarSesion"></button>
       </div>
     </div>

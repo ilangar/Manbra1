@@ -15,3 +15,12 @@ $idUser = $_SESSION['IDUsuario'];
 
 //$verMusicograma = 
 ?>
+
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    
+</body>
+</html>
