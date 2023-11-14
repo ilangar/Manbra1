@@ -14,7 +14,7 @@
 
 
     <div class="image-container" id="image-container">
-        <!-- Deja este espacio vacío para las imágenes iniciales -->
+        <!-- espacio vacío para las imágenes -->
     </div>
     
     <div class="image-drop-container" id="image-drop-container"></div>
