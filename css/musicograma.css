@@ -41,7 +41,12 @@ h1 {
     max-height: 100px;
 }
 
-
+.btnCasa
+{
+    position: absolute;
+    top: 8%;
+    left: 85%;
+}
 button {
     display: inline-block;
     margin: 10px;
@@ -56,11 +61,17 @@ button {
 #Guardar {
     background-image: url('../diseño/guardar.png');
     background-size: cover; 
+    position: absolute;
+    top: 20%;
+    left: 50%;
 }
 
 #resetButton {
     background-image: url('../diseño/reiniciar.png');
-    background-size: cover; 
+    background-size: cover;
+    position: absolute;
+    top: 20%;
+    left: 40%; 
 }
 
 #mensaje {
