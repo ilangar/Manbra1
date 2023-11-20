@@ -27,7 +27,6 @@ if ($resultCheck)
         {
             $idUser = $mysqli->insert_id;
 
-            // Recupera las actividades disponibles
             $sqlActividad = "SELECT idActividad FROM Actividades";
             $result_actividad = $mysqli->query($sqlActividad);
  

@@ -21,8 +21,7 @@ if (!isset($_SESSION['IDUsuario']))
 
 $idActividad = 2;
 $ronda = 0;
-$rondas = $ronda + $_POST['ronda'];
-$rondasFinal = $rondas;
+$rondasFinal = $ronda + $_POST['ronda'];
 
 $sql = "SELECT ronda FROM Perfil WHERE idUser = $idUser AND idActividad = $idActividad";
 $result = $mysqli->query($sql);
@@ -30,14 +29,14 @@ $result = $mysqli->query($sql);
 if ($result) 
 {
     $row = $result->fetch_assoc();
-    $puntajeAnterior = $row['ronda'];
+    $puntajeActual = $row['ronda'];
 } 
 else 
 {
     die("Error en la consulta: " . $mysqli->error);
 }
 
-if ($rondasFinal > $puntajeAnterior)
+if ($rondasFinal > $puntajeActual)
 {
     $sqlMayor = "UPDATE Perfil SET ronda = $rondasFinal WHERE idUser = $idUser AND idActividad = $idActividad"; 
     $mysqli->query($sqlMayor);

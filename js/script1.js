@@ -10,7 +10,7 @@ const img4 = document.createElement("img");
 
 const instruments1 = [
   "../instrumentos/cuerdas/guitarra acustica.wav",
-  "../instrumentos/cuerdas/guitarra.mp4",
+  "../instrumentos/cuerdas/electrica.mp3",
   "../instrumentos/cuerdas/violin.mp3",
   "../instrumentos/cuerdas/bajo.wav"
 ];

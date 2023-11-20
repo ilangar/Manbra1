@@ -17,10 +17,10 @@ class Simon {
         }
         this.errorSound = new Audio('./sounds/error.wav');
         this.buttonSounds = [
-            new Audio('./sounds/1.mp3'),
-            new Audio('./sounds/2.mp3'),
-            new Audio('./sounds/3.mp3'),
-            new Audio('./sounds/4.mp3'),
+            new Audio('../sounds/1.mp3'),
+            new Audio('../sounds/2.mp3'),
+            new Audio('../sounds/3.mp3'),
+            new Audio('../sounds/4.mp3'),
         ]
     }
 
@@ -148,7 +148,6 @@ function scoringsimon(valor){
         dataType:'text',
         success: function(response) {
             $("#MP").html(response);
-           // alert (response);
         },
         error: function(error) {
             
